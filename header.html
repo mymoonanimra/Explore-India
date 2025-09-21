@@ -1,37 +1,43 @@
-<!DOCTYPE html>
-<head><title>exploreindia</title></head>
-
 <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap" rel="stylesheet">
+
 <style>
   .links {
     display: flex;
-    justify-content: flex-end;  /* align right */
+    justify-content: flex-end;
     gap: 30px;
-    background: #440303;   /* dark red background */
-    padding: 15px 30px;
+    background: #ffd1a3;
+    padding: 8px 20px; /* reduced from 15px 30px */
+    flex-wrap: wrap;
   }
 
   .links a {
     text-decoration: none;
-    color: white;
+    color: rgb(243, 105, 7);
     font-size: 18px;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     transition: color 0.3s, border-bottom 0.3s;
   }
 
   .links a:hover {
-    color: #ffcc00;
-    border-bottom: 2px solid #ffcc00;
-    padding-bottom: 3px;
+    color: #211a02;
+    border-bottom: 2px solid #231c03;
+    padding-bottom: 2px; /* slightly smaller hover padding */
+  }
+
+  @media (max-width: 600px) {
+    .links {
+      justify-content: center;
+      gap: 15px;
+      padding: 5px 10px; /* smaller for mobile */
+    }
+    .links a {
+      font-size: 16px;
+    }
   }
 </style>
 
 <div class="links">
-  <a href="new.home.html">Home</a>
-  <a href="index.html">Destinations</a>
-  <a href="trips.html">Trips</a>
-  <a href="about.html">About Us</a>
+  <a href="index.html">Home</a>
+  <a href="chatbot.html">AI Buddy</a>
+  <a href="aboutus.html">About Us</a>
 </div>
-
-
- 
