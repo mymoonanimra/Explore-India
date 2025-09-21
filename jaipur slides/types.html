@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto Sliding Carousel</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 10px;
+  }
+
+  .carousel-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: hidden;
+    gap: 20px; /* increased spacing between slides */
+    padding: 0px; /* increased padding around the carousel */
+    margin: 50px 150px; /* top/bottom: 50px, left/right: 100px */
+    background: #ffffff;
+    border-radius: 10px;
+    scroll-behavior: smooth;
+  }
+
+  .slide {
+    flex: 0 0 auto;
+    width: 240px;
+    height: 350px;
+    background-color: #dddddd;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #333;
+    transition: transform 0.3s;
+    padding: 15px; /* inner padding inside slide box */
+  }
+
+  .slide:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  .dots-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .dot.active {
+    background-color: #333;
+  }
+
+</style>
+</head>
+<body>
+
+<h1 style="text-align:center;">7 Slides Carousel</h1>
+
+<div class="carousel-container" id="carousel">
+  <div class="slide">Slide 1</div>
+  <div class="slide">Slide 2</div>
+  <div class="slide">Slide 3</div>
+  <div class="slide">Slide 4</div>
+  <div class="slide">Slide 5</div>
+  <div class="slide">Slide 6</div>
+  <div class="slide">Slide 7</div>
+</div>
+
+<div class="dots-container" id="dots"></div>
+
+<script>
+const carousel = document.getElementById('carousel');
+const slides = document.querySelectorAll('.slide');
+const dotsContainer = document.getElementById('dots');
+const slideWidth = 240 + 30; // width + updated gap
+let currentIndex = 0;
+
+// Create dots
+slides.forEach((_, index) => {
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  if(index === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => {
+    currentIndex = index;
+    updateCarousel();
+    resetInterval();
+  });
+  dotsContainer.appendChild(dot);
+});
+
+function updateCarousel() {
+  carousel.scrollTo({
+    left: currentIndex * slideWidth,
+    behavior: 'smooth'
+  });
+  updateDots();
+}
+
+function updateDots() {
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[currentIndex].classList.add('active');
+}
+
+// Automatic sliding
+function nextSlide() {
+  currentIndex++;
+  if(currentIndex >= slides.length) currentIndex = 0;
+  updateCarousel();
+}
+
+let autoSlide = setInterval(nextSlide, 3000);
+
+function resetInterval() {
+  clearInterval(autoSlide);
+  autoSlide = setInterval(nextSlide, 3000);
+}
+
+carousel.addEventListener('scroll', () => {
+  const index = Math.round(carousel.scrollLeft / slideWidth);
+  if(index !== currentIndex) {
+    currentIndex = index;
+    updateDots();
+    resetInterval();
+  }
+});
+</script>
+
+</body>
+</html>

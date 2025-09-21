@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Slide Carousel with Dots</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    .carousel {
+      width: 1000px;   /* fits 4 slides */
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .slide {
+      flex: 0 0 250px;   /* width of each slide */
+      height: 350px;
+      margin: 0 10px;   /* space between slides */
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide-title {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Dots styling */
+    .carousel-dots {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #bbb;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .dot.active {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel">
+    <div class="carousel-track">
+      <div class="slide"><img src="ladakh slides/la " alt="Slide 1"><div class="slide-title">Ladakh</div></div>
+      <div class="slide"><img src="https://via.placeholder.com/250x350" alt="Slide 2"><div class="slide-title">Kerala</div></div>
+      <div class="slide"><img src="https://via.placeholder.com/250x350" alt="Slide 3"><div class="slide-title">Delhi</div></div>
+      <div class="slide"><img src="https://via.placeholder.com/250x350" alt="Slide 4"><div class="slide-title">Punjab</div></div>
+      <div class="slide"><img src="https://via.placeholder.com/250x350" alt="Slide 5"><div class="slide-title">Rajasthan</div></div>
+      <div class="slide"><img src="https://via.placeholder.com/250x350" alt="Slide 6"><div class="slide-title">Goa</div></div>
+      <div class="slide"><img src="https://via.placeholder.com/250x350" alt="Slide 7"><div class="slide-title">Kashmir</div></div>
+    </div>
+  </div>
+  <!-- Dots -->
+  <div class="carousel-dots"></div>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.slide');
+    const slideWidth = slides[0].offsetWidth + 20; // width + margin
+    const dotsContainer = document.querySelector('.carousel-dots');
+
+    let index = 0;
+    const maxIndex = slides.length - 4; // show 4 at a time
+
+    // Create dots
+    for (let i = 0; i <= maxIndex; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        index = i;
+        updateCarousel();
+        resetInterval();
+      });
+      dotsContainer.appendChild(dot);
+    }
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * slideWidth}px)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+
+    function moveSlides() {
+      index++;
+      if (index > maxIndex) {
+        index = 0;
+      }
+      updateCarousel();
+    }
+
+    let autoSlide = setInterval(moveSlides, 2500);
+
+    function resetInterval() {
+      clearInterval(autoSlide);
+      autoSlide = setInterval(moveSlides, 2500);
+    }
+  </script>
+
+</body>
+</html>
