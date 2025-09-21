@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore India</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Federo&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    /* ---------- HEADER ---------- */
+    h1 {
+      font-size: 50px;
+      font-family: tahoma;
+      font-weight: 700;
+      padding-left: 20px;
+      border-left: 20px solid #8a501e;
+       
+      margin: 0;
+    }
+
+    .main-heading {
+    display: flex;
+    justify-content: space-between; /* heading left, links right */
+    align-items: center;
+    padding: 10px 20px; /* smaller padding */
+    background: #f8f8f8;
+    display: flex;
+    justify-content: space-between; /* heading left, links right */
+    align-items: center;
+    padding: 0px 10px; /* smaller padding */
+    background: #efe6dd; /* 🔴 add background color here */
+    }
+
+
+    .title-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .subtitle {
+      font-family: 'Lavishly Yours', cursive;
+      font-size: 39px;
+      font-style: italic;
+      margin-top: 0px;
+      margin-bottom:1px;
+      margin-left: 300px;
+    }
+
+    .links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #A0522D;
+      font-size: 18px;
+      
+    }
+
+ 
+    /* ---------- FIRST CAROUSEL ---------- */
+    
+    .center-carousel {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 50px auto;
+      overflow: hidden;
+    }
+
+    .center-carousel .carousel-track {
+      display: flex;
+      gap: 20px;
+      will-change: transform;
+    }
+
+    .center-carousel .carousel-slide {
+      flex: 0 0 60%;
+      max-width: 700px;
+      height: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      transform: scale(0.85);
+      opacity: 0.5;
+      transition: transform 0.45s ease, opacity 0.45s ease;
+    }
+
+    .center-carousel .carousel-slide.active {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .center-carousel .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .center-carousel .prev,
+    .center-carousel .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 34px;
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      cursor: pointer;
+      border-radius: 50%;
+      padding: 6px 10px;
+      z-index: 20;
+    }
+
+    .center-carousel .prev { left: 8px; }
+    .center-carousel .next { right: 8px; }
+
+    .center-carousel .dots {
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    .center-carousel .dots .dot {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      margin: 0 6px;
+      background: #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform .25s, box-shadow .25s, background .25s;
+    }
+
+    .center-carousel .dots .dot:hover {
+      transform: scale(1.2);
+    }
+
+    .center-carousel .dots .dot.active {
+      background: #c10294;
+      box-shadow: 0 0 8px rgba(193,2,148,0.45);
+    }
+
+    /* ---------- SECOND CAROUSEL (7 slides) ---------- */
+
+
+.carousel {
+  width: 1000px;
+  max-width: 95%;
+  overflow: hidden;
+  margin: 50px auto;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 250px;   /* card width */
+  height: 350px;     /* ✅ match infinite-carousel height */
+  margin: 0 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;      /* ✅ fills the fixed height */
+  object-fit: cover; /* crops neatly */
+}
+
+.slide-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.carousel-dots .dot {
+  width: 12px;
+  height: 12px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+  background: #c10294;
+}
+
+   
+
+/* --- JAIPUR CAROUSEL --- */ 
+ 
+.jaipur-carousel {
+  width: min(90%, 1200px);   /* responsive, max 1200px */
+  height: 400px;             /* fixed banner height */
+  margin: 0 auto;            /* center horizontally */
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  background: #000;
+}
+
+
+.jaipur-track {
+  display: flex; 
+  transition: transform 0.6s ease-in-out;
+  height: 100%;
+}
+
+.jaipur-slide {
+  flex: 0 0 100%;
+}
+
+.jaipur-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  
+}
+
+.jaipur-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.jaipur-dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.jaipur-dot.active {
+  background: #ff3366;
+}
+
+.jaipur-carousel {
+  width: min(90%, 1200px);
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  background: #000;
+}
+
+.jaipur-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  height: 100%;
+}
+
+.jaipur-slide {
+  flex: 0 0 100%;
+}
+
+.jaipur-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.jaipur-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.jaipur-dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.jaipur-dot.active {
+  background: #ff3366;
+}
+
+/* ---------- WIDE INFINITE CAROUSEL ---------- */
+.infinite-carousel {
+  width: 1000px;          /* wider container */
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  margin: 50px auto;
+}
+
+.infinite-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite; /* slower for wide view */
+}
+
+.infinite-slide {
+  flex: 0 0 250px;        /* card width */
+  height: 350px;
+  margin-right: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.infinite-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.infinite-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* scroll half, because we duplicated */
+}
+/*//*/
+.infinite-carousel {
+  width: 1000px;          /* container width */
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  margin: 50px auto;
+}
+
+.infinite-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite; /* makes it auto-scroll */
+}
+
+.infinite-slide {
+  flex: 0 0 250px;        /* card width */
+  height: 350px;
+  margin-right: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.infinite-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.infinite-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* scrolls halfway because slides are duplicated */
+}
+
+
+/*north india*/
+
+    .infinite-carousel {
+      width: 1000px;          /* wider container */
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    .infinite-track {
+      display: flex;
+      width: max-content;
+      animation: scroll 20s linear infinite; /* slower for wide view */
+    }
+
+    .infinite-slide {
+      flex: 0 0 250px;        /* card width */
+      height: 350px;
+      margin-right: 15px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .infinite-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .infinite-title {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); } /* scroll half, because we duplicated */
+    }
+ 
+/*east india*/
+
+    .infinite-carousel {
+      width: 1000px;          /* wider container */
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    .infinite-track {
+      display: flex;
+      width: max-content;
+      animation: scroll 20s linear infinite; /* slower for wide view */
+    }
+
+    .infinite-slide {
+      flex: 0 0 250px;        /* card width */
+      height: 350px;
+      margin-right: 15px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .infinite-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .infinite-title {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); } /* scroll half, because we duplicated */
+    }
+
+    /*west india*/
+
+    .infinite-carousel {
+      width: 1000px;          /* wider container */
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    .infinite-track {
+      display: flex;
+      width: max-content;
+      animation: scroll 20s linear infinite; /* slower for wide view */
+    }
+
+    .infinite-slide {
+      flex: 0 0 250px;        /* card width */
+      height: 350px;
+      margin-right: 15px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .infinite-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .infinite-title {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); } /* scroll half, because we duplicated */
+    }
+ 
+  /*FOOTER STARTS*/
+
+
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+  .footer {
+    background: #7b5e53;
+    color: #c3c3c3;
+    padding: 50px 80px;
+    font-family: 'Arial', sans-serif;
+    border-top: 5px solid #842e0f;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .footer-about h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #FFF8F0;
+  }
+  .footer-about h2 span {
+    color: #d19862;
+  }
+  .footer-about p {
+    font-size: 14px;
+    color: #EDE0D4;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .social-links a {
+    margin-right: 12px;
+    color: #fff;
+    font-size: 20px;
+    transition: 0.3s;
+  }
+  .social-links a:hover {
+    color: #EDE0D4;
+    transform: scale(1.2);
+  }
+
+  .footer-links h3,
+  .footer-contact h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff8f0;
+  }
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-links ul li {
+    margin-bottom: 8px;
+  }
+  .footer-links ul li a {
+    text-decoration: none;
+    color: #f3e0d7;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+  .footer-links ul li a:hover {
+    color: #FFDFAF;
+  }
+
+  .footer-contact p,
+  .footer-contact h4 {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #ffffff;
+  }
+  .footer-contact h4 {
+    margin-top: 10px;
+    color: #ffcc00;
+  }
+
+  .footer-contact i {
+    margin-right: 8px;
+    color: #f3e0d7;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #444;
+    margin-top: 25px;
+    padding-top: 15px;
+    font-size: 13px;
+    color: #f9f9f9;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 900px) {
+    .footer-container {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+    .social-links {
+      justify-content: center;
+    }
+  }
+
+   /*FOOTER ENDS*/
+
+/*chatbot*/
+
+/* Chatbot Styles */
+#chat-toggle {
+  position: fixed; bottom: 20px; right: 20px;
+  background: #a78bfa; color: white;
+  width: 60px; height: 60px;
+  border-radius: 50%; border: none;
+  font-size: 24px; cursor: pointer;
+}
+#chatbot {
+  position: fixed; bottom: 90px; right: 20px;
+  width: 340px; max-width: 90%;
+  background: #fff8f0; border-radius: 20px;
+  display: none; flex-direction: column;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+#chat-header { background: #a78bfa; color: white; padding: 12px; text-align: center; font-weight: bold; }
+#chat-body { display: flex; flex-direction: column; height: 380px; }
+#chat-messages { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.msg { padding: 10px; border-radius: 18px; max-width: 75%; }
+.user-msg { align-self: flex-end; background: #b9fbc0; }
+.bot-msg { align-self: flex-start; background: #ffcfd2; }
+#chat-input { border: none; padding: 12px; border-top: 1px solid #eee; outline: none; }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER --> 
+
+    <div class="main-heading">  
+  <div class="title-container"> 
+    <h1>Explore India</h1>
+    <p class="subtitle">A virtual guide to Indian destinations</p>
+  </div>
+
+  <div class="links">
+    <a href="new.home.html">Home</a>
+    <a href="chatbot.html">AI Buddy</a>
+    <a href="about.html">About Us</a>
+  </div>
+</div>
+
+  <hr style="width: 100%; border: 0 px solid #440303; margin:0px auto;">
+
+  <!-- FIRST CAROUSEL -->
+   
+
+  <!-- CENTERED INFINITE CAROUSEL -->
+<!-- CENTERED INFINITE CAROUSEL -->
+<div class="center-carousel" id="center-carousel">
+  <button class="prev" aria-label="previous">&#10094;</button>
+  <div class="carousel-track">
+    <div class="carousel-slide">
+      <a href="kashmir.html"><img src="kashmir slides/maink.jpg" alt="Slide 1"></a>
+    </div>
+        <div class="carousel-slide">
+      <a href="ooty.html"><img src="first5/ooty.jpg" alt="Slide 5"></a>
+    </div>
+    <div class="carousel-slide">
+      <a href="jaipur.html"><img src="first5/j.jpg" alt="Slide 2"></a>
+    </div>
+    <div class="carousel-slide">
+      <a href="goa.html"><img src="first5/g.jpg" alt="Slide 3"></a>
+    </div>
+    <div class="carousel-slide">
+      <a href="hyd.html"><img src="first5/h.jpg" alt="Slide 4"></a>
+    </div>
+    <div class="carousel-slide">
+      <a href="jaipur.html"><img src="first5/j.jpg" alt="Slide 2"></a>
+    </div>
+  </div>
+  <button class="next" aria-label="next">&#10095;</button>
+  <div class="dots"></div>
+</div>
+
+  
+  <hr style="width: 100%; border: 0 px solid #440303; margin:0px auto;">
+
+  <!-- SECOND CAROUSEL (7 slides) -->
+  <div class="top-places-heading2">
+    <h2>Top Places to Visit</h2>
+    <style>
+      .top-places-heading2{
+          font-family:'federo' , sans-serif ;
+          padding-left: 250px;
+          margin-top: 50px;
+          font-size: 30px;
+          color: #440303;
+      }
+    </style>
+  </div>
+
+<!-- SECOND CAROUSEL (7 slides) -->
+<!-- 7-SLIDE CAROUSEL -->
+<div class="carousel">
+  <div class="carousel-track" id="carousel7-track">
+    <a href="ladakh.html" class="slide">
+      <img src="ladakh slides/ladakh1.jpg" alt="Ladakh">
+      <div class="slide-title">Ladakh</div>
+    </a>
+    <a href="kerela.html" class="slide">
+      <img src="kerala slides/k1.jpg" alt="Kerala">
+      <div class="slide-title">Kerala</div>
+    </a>
+    <a href="jaipur.html" class="slide">
+      <img src="jaipur slides/j1.jpg" alt="Jaipur">
+      <div class="slide-title">Jaipur</div>
+    </a>
+    <a href="ooty.html" class="slide">
+      <img src="ooty slides/o1.jpg" alt="Ooty">
+      <div class="slide-title">ooty</div>
+    </a>
+    <a href="hami.html" class="slide">
+      <img src="hampi slides/h1.jpg" alt="Hampi">
+      <div class="slide-title">Hampi</div>
+    </a>
+    <a href="goa.html" class="slide">
+      <img src="goa slides/g1.jpg" alt="Goa">
+      <div class="slide-title">Goa</div>
+    </a>
+    <a href="kashmir.html" class="slide">
+      <img src="kashmir slides/kh1.jpg" alt="Kashmir">
+      <div class="slide-title">Kashmir</div>
+    </a>
+  </div>
+  <div class="carousel-dots" id="carousel7-dots"></div>
+</div>
+
+ 
+   <hr style="width: 100%; border: 0 px solid #440303; margin:30px auto;margin-top: 50px;margin-bottom: 50px;">
+
+
+   <!--3 slides-->
+
+   <div class="road-trips-h3">
+  <h3>The Great Indian Roadtrip</h3>
+  <style>
+    .road-trips-h3 {
+      font-family: 'federo', sans-serif;
+      padding-left: 250px;
+      margin-top: 50px;
+      font-size: 30px;
+      color: #440303;
+    }
+  </style>
+</div>
+
+<div class="jaipur-carousel" id="jaipur-carousel">
+  <div class="jaipur-track" id="jaipur-track">
+    <!-- Cloned last slide for seamless loop -->
+    <a href="roadtrip-1.html" class="jaipur-slide">
+      <img src="roadtrip-1 slides/r1.jpg" alt="Slide 3">
+      <div class="jaipur-title">Slide 3</div>
+    </a>
+
+    <!-- Original slides -->
+    <a href="roadtrip-1.html" class="jaipur-slide">
+      <img src="roadtrip-1 slides/r1.jpg" alt="Slide 1">
+      <div class="jaipur-title">Slide 1</div>
+    </a>
+    <a href="roadtrip-2.html" class="jaipur-slide">
+      <img src="roadtrip-2 slides/r2.jpg" alt="Slide 2">
+      <div class="jaipur-title">Slide 2</div>
+    </a>
+    <a href="roadtrip-3.html" class="jaipur-slide">
+      <img src="roadtrip-3 slides/r3.jpg" alt="Slide 3">
+      <div class="jaipur-title">Slide 3</div>
+    </a>
+
+    <!-- Cloned first slide for seamless loop -->
+    <a href="roadtrip-1.html" class="jaipur-slide">
+      <img src="roadtrip-1 slides/r1.jpg" alt="Slide 1">
+      <div class="jaipur-title">Slide 1</div>
+    </a>
+  </div>
+
+  <div class="jaipur-dots" id="jaipur-dots"></div>
+</div>
+
+<hr style="width: 100%; border: 0 px solid #440303; margin:30px auto;margin-top: 50px;margin-bottom: 50px;">
+
+
+   <!--wide infinte carsoule-->
+<div class="south-india-h4">
+    <h4>South india</h4>
+    <style>
+      .south-india-h4{
+      font-family: 'federo', sans-serif;
+      padding-left: 250px;
+      margin-top: 50px;
+      font-size: 35px;
+      color: #440303;
+    }
+
+    </style>
+  </div>
+
+<div class="infinite-carousel">
+  <div class="infinite-track">
+    <!-- Original slides -->
+    <a href="hyd.html" class="infinite-slide">
+      <img src="hyd slides/h3.jpg">
+      <div class="infinite-title">Hyderabad</div>
+    </a>
+    <a href="rameshwaram.html" class="infinite-slide">
+      <img src="rameshwaram slides/r1.jpg">
+      <div class="infinite-title">Rameshwaram</div>
+    </a>
+    <a href="kochi.html" class="infinite-slide">
+      <img src="kochi slides/k1.jpg">
+      <div class="infinite-title">Kochi</div>
+    </a>
+    <a href="tirupati.html" class="infinite-slide">
+      <img src="tirupati slides/t1 (2).jpg">
+      <div class="infinite-title">Tirupati</div>
+    </a>
+
+    <!-- Duplicate slides (important for looping effect) -->
+    <a href="hyd.html" class="infinite-slide">
+      <img src="hyd slides/h3.jpg">
+      <div class="infinite-title">Hyderabad</div>
+    </a>
+    <a href="rameshwaram.html" class="infinite-slide">
+      <img src="rameshwaram slides/r1.jpg">
+      <div class="infinite-title">Rameshwaram</div>
+    </a>
+    <a href="kochi.html" class="infinite-slide">
+      <img src="kochi slides/k1.jpg">
+      <div class="infinite-title">Kochi</div>
+    </a>
+    <a href="tirupati.html" class="infinite-slide">
+      <img src="tirupati slides/t1 (2).jpg">
+      <div class="infinite-title">Tirupati</div>
+    </a>
+  </div>
+</div>
+
+<hr style="width: 100%; border: 0 px solid #440303; margin:30px auto;margin-top: 50px;margin-bottom: 50px;">
+
+<!--north india-->
+ 
+<div class="north-india-h5">
+    <h5>north india</h5>
+    <style>
+      .north-india-h5{
+          font-family:'federo' , sans-serif ;
+          padding-left: 250px;
+          margin-top: 50px;
+          font-size: 50px;
+          color: #440303;
+          }
+    </style>
+</div> 
+
+<div class="infinite-carousel">
+  <div class="infinite-track">
+    <!-- Original slides -->
+    <a href="kashmir.html" class="infinite-slide">
+      <img src="kashmir slides/kh1.jpg">
+      <div class="infinite-title">Kashmir</div>
+    </a>
+    <a href="Leh Ladakh.html" class="infinite-slide">
+      <img src="ladakh slides/ladakh1.jpg">
+      <div class="infinite-title">Leh ladakh</div>
+    </a>
+    <a href="shimla.html" class="infinite-slide">
+      <img src="shimla slides/hs1.jpg">
+      <div class="infinite-title">Shimla</div>
+    </a>
+    <a href="jaipur.html" class="infinite-slide">
+      <img src="jaipur slides/j1.jpg">
+      <div class="infinite-title">Jaipur</div>
+    </a>
+
+    <!-- Duplicate slides for seamless scroll -->
+    <a href="kashmir.html" class="infinite-slide">
+      <img src="kashmir slides/kh1.jpg">
+      <div class="infinite-title">Kashmir</div>
+    </a>
+    <a href="Leh Ladakh.html" class="infinite-slide">
+      <img src="ladakh slides/ladakh1.jpg">
+      <div class="infinite-title">Leh Ladakh</div>
+    </a>
+    <a href="shimla.html" class="infinite-slide">
+      <img src="shimla slides/hs1.jpg">
+      <div class="infinite-title">Shimla</div>
+    </a>
+    <a href="jaipur.html" class="infinite-slide">
+      <img src="jaipur slides/j1.jpg">
+      <div class="infinite-title">Jaipur</div>
+    </a>
+  </div>
+</div>
+
+
+<hr style="width: 100%; border: 0 px solid #440303; margin:30px auto;margin-top: 50px;margin-bottom: 50px;">
+
+<!--east india-->
+ 
+<div class="east-india-h6">
+    <h6>east india</h6>
+    <style>
+      .east-india-h6{
+          font-family:'federo' , sans-serif ;
+          padding-left: 250px;
+          margin-top: 50px;
+          font-size: 55px;
+          color: #440303;
+      }
+    </style>
+  </div> 
+<div class="infinite-carousel">
+  <div class="infinite-track">
+    <!-- Original slides -->
+    <a href="Dargeeling.html" class="infinite-slide">
+      <img src="darjeeling slides/hd.jpg">
+      <div class="infinite-title">Darjeeling</div>
+    </a>
+    <a href="shilllong.html" class="infinite-slide">
+      <img src="shillong slides/hs.jpg">
+      <div class="infinite-title">Shillong</div>
+    </a>
+    <a href="kaziranga.html" class="infinite-slide">
+      <img src="kaziranga slides/hk.jpg">
+      <div class="infinite-title">Kaziranga</div>
+    </a>
+    <a href="Ziro.html" class="infinite-slide">
+      <img src="Ziro valley slides/z1.jpg">
+      <div class="infinite-title">Ziro Valley</div>
+    </a>
+
+    <!-- Duplicate slides for seamless scroll -->
+    <a href="Dargeeling.html" class="infinite-slide">
+      <img src="darjeeling slides/hd.jpg">
+      <div class="infinite-title">Darjeeling</div>
+    </a>
+    <a href="shilllong.html" class="infinite-slide">
+      <img src="shillong slides/hs.jpg">
+      <div class="infinite-title">Shillong</div>
+    </a>
+    <a href="kaziranga.html" class="infinite-slide">
+      <img src="kaziranga slides/hk.jpg">
+      <div class="infinite-title">Kaziranga</div>
+    </a>
+    <a href="Ziro.html" class="infinite-slide">
+      <img src="Ziro valley slides/z1.jpg">
+      <div class="infinite-title">Ziro Valley</div>
+    </a>
+  </div>
+</div>
+
+ <hr style="width: 100%; border: 0 px solid #440303; margin:30px auto;margin-top: 50px;margin-bottom: 50px;">
+
+
+ <!--west india-->
+  <div class="west-india-h7">
+    <h7>west india</h7>
+    <style>
+      .west-india-h7{
+          font-family:'federo' , sans-serif ;
+          padding-left: 250px;
+          margin-top: 50px;
+          font-size: 50px;
+          color: #440303;
+      }
+    </style>
+  </div>
+ 
+<div class="infinite-carousel">
+  <div class="infinite-track">
+    <!-- Original slides -->
+    <a href="goa.html" class="infinite-slide">
+      <img src="goa slides/g6.jpg">
+      <div class="infinite-title">Goa</div>
+    </a>
+    <a href="jaipur.html" class="infinite-slide">
+      <img src="jaipur slides/j3.jpg">
+      <div class="infinite-title">Jaipur</div>
+    </a>
+    <a href="mumbai.html" class="infinite-slide">
+      <img src="mumbai slides/hm.jpg">
+      <div class="infinite-title">Mumbai</div>
+    </a>
+    <a href="kutch.html" class="infinite-slide">
+      <img src="kutch slides/hk1.jpg">
+      <div class="infinite-title">Rann Of Kutch</div>
+    </a>
+
+    <!-- Duplicate slides for seamless scroll -->
+    <a href="goa.html" class="infinite-slide">
+      <img src="goa slides/g6.jpg">
+      <div class="infinite-title">Goa</div>
+    </a>
+    <a href="jaipur.html" class="infinite-slide">
+      <img src="jaipur slides/j3.jpg">
+      <div class="infinite-title">Jaipur</div>
+    </a>
+    <a href="mumbai.html" class="infinite-slide">
+      <img src="mumbai slides/hm.jpg">
+      <div class="infinite-title">Mumbai</div>
+    </a>
+    <a href="kutch.html" class="infinite-slide">
+      <img src="kutch slides/hk1.jpg">
+      <div class="infinite-title">Rann Of Kutch</div>
+    </a>
+  </div>
+</div>
+
+
+ <hr style="width: 100%; border: 0 px solid #440303; margin:30px auto;margin-top: 50px;margin-bottom: 50px;">
+
+   <!-- Your last section (west india carousel etc.) -->
+
+<!-- FOOTER START -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Left: Logo + About -->
+    <div class="footer-about">
+      <h2>Explore <span>India</span></h2>
+      <p>A Virtual Guide To Indian Destinations</p>
+      <p>Explore India with ease! Discover destinations, plan trips, and get travel tips for all regions of India.</p>
+      <div class="social-links">
+        <a href="#" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
+        <a href="#" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Middle: Useful Links -->
+    <div class="footer-links">
+      <h3>Useful Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">AI Buddy</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Right: Contact -->
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>📍 India</p>
+      <p><i class="fas fa-envelope"></i> info@exploreindia.com</p>
+      <h4>WhatsApp</h4>
+      <p>📱 +91 98210 88817</p>
+    </div>
+
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="footer-bottom">
+    <p>Disclaimer | Network Website | Travel Tips</p>
+    <p>Copyright © 2025 India Travel. All Rights Reserved.</p>
+  </div>
+</footer>
+<!---------FOOTER ENDS---------->
+
+ <!-------------chatbot-->
+
+ <button id="chat-toggle">💬</button>
+<div id="chatbot">
+  <div id="chat-header">AI Buddy 🤖</div>
+  <div id="chat-body">
+    <div id="chat-messages"></div>
+    <input type="text" id="chat-input" placeholder="Ask me about India...">
+  </div>
+</div>
+
+
+  <!-- ---------- SCRIPTS ---------- -->
+  <script>
+/*5 slides*/
+    document.addEventListener('DOMContentLoaded', () => {
+      const carousel = document.getElementById('center-carousel');
+      const track = carousel.querySelector('.carousel-track');
+      const realSlides = Array.from(track.children);
+      const prevBtn = carousel.querySelector('.prev');
+      const nextBtn = carousel.querySelector('.next');
+      const dotsContainer = carousel.querySelector('.dots');
+
+      const firstClone = realSlides[0].cloneNode(true);
+      const lastClone = realSlides[realSlides.length - 1].cloneNode(true);
+      track.appendChild(firstClone);
+      track.insertBefore(lastClone, realSlides[0]);
+
+      const slides = Array.from(track.children);
+      const realCount = realSlides.length;
+      let index = 1;
+
+      let slideWidth = 0;
+      let containerWidth = 0;
+
+      function calcSizes() {
+        slideWidth = realSlides[0].getBoundingClientRect().width;
+        containerWidth = carousel.getBoundingClientRect().width;
+        setPosition(false);
+      }
+
+      function setPosition(animate = true) {
+        track.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
+        const activeSlide = slides[index];
+        const slideRect = activeSlide.getBoundingClientRect();
+        const trackRect = track.getBoundingClientRect();
+        const slideCenter = slideRect.left - trackRect.left + slideRect.width / 2;
+        const translateX = slideCenter - containerWidth / 2;
+        track.style.transform = `translateX(-${translateX}px)`;
+      }
+
+      function createDots() {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < realCount; i++) {
+          const d = document.createElement('span');
+          d.className = 'dot' + (i === 0 ? ' active' : '');
+          d.addEventListener('click', () => {
+            index = i + 1;
+            setPosition(true);
+            resetTimer();
+            updateActive();
+          });
+          dotsContainer.appendChild(d);
+        }
+      }
+
+      function updateActive() {
+        slides.forEach(s => s.classList.remove('active'));
+        const dots = dotsContainer.querySelectorAll('.dot');
+        if (slides[index]) slides[index].classList.add('active');
+        const dotIndex = (index - 1 + realCount) % realCount;
+        dots.forEach(d => d.classList.remove('active'));
+        if (dots[dotIndex]) dots[dotIndex].classList.add('active');
+      }
+
+      track.addEventListener('transitionend', () => {
+        if (slides[index] === firstClone) {
+          index = 1; setPosition(false);
+        }
+        if (slides[index] === lastClone) {
+          index = realCount; setPosition(false);
+        }
+        updateActive();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        index++; setPosition(true); resetTimer();
+      });
+      prevBtn.addEventListener('click', () => {
+        index--; setPosition(true); resetTimer();
+      });
+
+      let timer = null;
+      function startTimer() {
+        timer = setInterval(() => {
+          index++; setPosition(true);
+        }, 3800);
+      }
+      function resetTimer() {
+        clearInterval(timer); startTimer();
+      }
+
+      carousel.addEventListener('mouseenter', () => clearInterval(timer));
+      carousel.addEventListener('mouseleave', () => resetTimer());
+      window.addEventListener('resize', () => { calcSizes(); updateActive(); });
+
+      const imgs = Array.from(track.querySelectorAll('img'));
+      Promise.all(imgs.map(img =>
+        img.complete ? Promise.resolve() : new Promise(res => { img.onload = img.onerror = res; })
+      )).then(() => {
+        calcSizes(); createDots(); updateActive(); startTimer();
+        setTimeout(() => setPosition(false), 20);
+      });
+    });
+
+ 
+/* ---------- 7 SLIDES INFINITE CAROUSEL ---------- */
+    document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('carousel7-track');
+  const slides = track.querySelectorAll('.slide');
+  const dotsContainer = document.getElementById('carousel7-dots');
+
+  if (!track || slides.length === 0 || !dotsContainer) return;
+
+  // Clone first and last slides
+  const firstClone = slides[0].cloneNode(true);
+  const lastClone = slides[slides.length - 1].cloneNode(true);
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, slides[0]);
+
+  const allSlides = track.querySelectorAll('.slide');
+  let index = 1; // start at first real slide
+  const totalSlides = allSlides.length;
+  const realSlides = totalSlides - 2;
+
+  const slideWidth = allSlides[0].offsetWidth + 20; // include margin
+  track.style.transform = `translateX(-${index * slideWidth}px)`;
+
+  // Create dots
+  for (let i = 0; i < realSlides; i++) {
+    const dot = document.createElement('div');
+    dot.className = i === 0 ? 'dot active' : 'dot';
+    dot.addEventListener('click', () => {
+      index = i + 1;
+      update();
+      resetTimer();
+    });
+    dotsContainer.appendChild(dot);
+  }
+
+  const dots = dotsContainer.querySelectorAll('.dot');
+
+  function update() {
+    track.style.transition = 'transform 0.6s ease-in-out';
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+    dots.forEach(d => d.classList.remove('active'));
+    let dotIndex = index - 1;
+    if (dotIndex < 0) dotIndex = realSlides - 1;
+    if (dotIndex >= realSlides) dotIndex = 0;
+    dots[dotIndex].classList.add('active');
+  }
+
+  track.addEventListener('transitionend', () => {
+    if (index === totalSlides - 1) {
+      track.style.transition = 'none';
+      index = 1;
+      track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+    if (index === 0) {
+      track.style.transition = 'none';
+      index = realSlides;
+      track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+  });
+
+  function nextSlide() {
+    index++;
+    update();
+  }
+
+  let timer = setInterval(nextSlide, 4000);
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(nextSlide, 4000);
+  }
+
+  update();
+});
+
+
+ /*jaipur 3 slides*/
+document.addEventListener('DOMContentLoaded', function () {
+  const track = document.getElementById('jaipur-track');
+  const slides = track.querySelectorAll('.jaipur-slide');
+  const dotsWrap = document.getElementById('jaipur-dots');
+
+  if (!track || slides.length === 0 || !dotsWrap) return;
+
+  let index = 1; // start from the first real slide
+  const totalSlides = slides.length; // includes clones
+  const realSlides = totalSlides - 2; // exclude clones
+
+  // position to first real slide
+  track.style.transform = `translateX(-${index * 100}%)`;
+
+  // generate dots
+  for (let i = 0; i < realSlides; i++) {
+    const dot = document.createElement('span');
+    dot.className = 'jaipur-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => { index = i + 1; update(); resetAuto(); });
+    dotsWrap.appendChild(dot);
+  }
+  const dots = dotsWrap.querySelectorAll('.jaipur-dot');
+
+  function update() {
+    track.style.transition = 'transform 0.6s ease-in-out';
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    // update dots
+    dots.forEach(d => d.classList.remove('active'));
+    let dotIndex = index - 1;
+    if (dotIndex < 0) dotIndex = realSlides - 1;
+    if (dotIndex >= realSlides) dotIndex = 0;
+    dots[dotIndex].classList.add('active');
+  }
+
+  function next() {
+    index++;
+    update();
+  }
+
+  function prev() {
+    index--;
+    update();
+  }
+
+  track.addEventListener('transitionend', () => {
+    if (index === totalSlides - 1) {
+      track.style.transition = 'none';
+      index = 1; // jump back to first real
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+    if (index === 0) {
+      track.style.transition = 'none';
+      index = realSlides; // jump to last real
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+  });
+
+  let timer = setInterval(next, 3000);
+  function resetAuto() {
+    clearInterval(timer);
+    timer = setInterval(next, 3000);
+  }
+
+  update();
+});
+ 
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector("#south-carousel");
+  if (!carousel) return;
+
+  const track = carousel.querySelector(".carousel-track");
+  const slides = Array.from(track.children);
+  const prevBtn = carousel.querySelector(".prev");
+  const nextBtn = carousel.querySelector(".next");
+
+  let index = 0;
+  let slideWidth = slides[0].getBoundingClientRect().width;
+
+  function updatePosition() {
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    updatePosition();
+  }
+
+  function prevSlide() {
+    index = (index - 1 + slides.length) % slides.length;
+    updatePosition();
+  }
+
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+
+  setInterval(nextSlide, 3000);
+
+  window.addEventListener("resize", () => {
+    slideWidth = slides[0].getBoundingClientRect().width;
+    updatePosition();
+  });
+});
+ /*chatbot*/
+ const botData = [
+  { keywords: ["hi","hello"], response: "Hello 👋! I'm AI Buddy." },
+  { keywords: ["how are you"], response: "I'm doing great 🙌, how about you?" },
+  { keywords: ["south india"], response: "🌴 Kerala, Hyderabad, Rameshwaram, Kochi, Tirupati." },
+  { keywords: ["north india"], response: "🏔️ Kashmir, Jaipur, Ladakh, Ooty, Hampi." },
+  { keywords: ["east india"], response: "🌄 West Bengal, Odisha, Bihar, Jharkhand." },
+  { keywords: ["west india"], response: "🏖️ Maharashtra, Gujarat, Goa, Rajasthan." },
+  { keywords: ["travel tips"], response: "🧳 Pack light, keep water handy, respect traditions!" },
+];
+
+function addMessage(sender, text) {
+  const msg = document.createElement("div");
+  msg.classList.add("msg", sender === "user" ? "user-msg" : "bot-msg");
+  msg.textContent = text;
+  document.getElementById("chat-messages").appendChild(msg);
+  document.getElementById("chat-messages").scrollTop = 9999;
+}
+
+document.getElementById("chat-input").addEventListener("keypress", e => {
+  if (e.key === "Enter") {
+    const input = e.target.value.toLowerCase();
+    addMessage("user", e.target.value);
+    e.target.value = "";
+    let reply = "🤔 Sorry, I didn't understand that!";
+    for (let item of botData) {
+      if (item.keywords.some(k => input.includes(k))) reply = item.response;
+    }
+    setTimeout(()=>addMessage("bot", reply), 400);
+  }
+});
+
+document.getElementById("chat-toggle").onclick = () => {
+  const bot = document.getElementById("chatbot");
+  bot.style.display = bot.style.display === "flex" ? "none" : "flex";
+};
+
+
+ 
+  </script>
+</body>
+</html>
