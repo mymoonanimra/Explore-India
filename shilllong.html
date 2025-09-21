@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shillong | Explore India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Federo&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="header"></div>
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+  </script>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Shillong – Scotland of the East</h1>
+      <p>Waterfalls | Hills | Music | Best Time: September – May</p>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="section">
+    <h2>About Shillong</h2>
+    <p>
+      Shillong, the charming capital of Meghalaya, is often called the <strong>“Scotland of the East”</strong> because of its rolling hills, 
+      pine trees, and misty landscapes. Known for its vibrant music culture, serene lakes, and breathtaking waterfalls, 
+      it is a favorite destination for nature lovers and adventure seekers.
+    </p>
+  </section>
+
+  <!-- Best Time -->
+  <section class="section pastel">
+    <h2>Best Time to Visit</h2>
+    <ul>
+      <li><strong>September – November:</strong> Clear skies, waterfalls in full flow.</li>
+      <li><strong>December – February:</strong> Cool winter, great for sightseeing.</li>
+      <li><strong>March – May:</strong> Pleasant weather, blooming flowers.</li>
+      <li><strong>June – August:</strong> Heavy rains, lush greenery but risky travel.</li>
+    </ul>
+    <p class="tip">💡 Tip: Carry rain gear anytime — Shillong is known for sudden showers!</p>
+  </section>
+
+  <!-- How to Reach -->
+  <section class="section">
+    <h2>How to Reach</h2>
+    <p><strong>By Air:</strong> Shillong Airport (Umroi, 30 km) and Guwahati Airport (125 km) are nearest options.</p>
+    <p><strong>By Train:</strong> Guwahati Railway Station is the closest major station (100 km).</p>
+    <p><strong>By Road:</strong> Regular taxis and buses connect Shillong to Guwahati and nearby towns.</p>
+  </section>
+
+  <!-- Top Places -->
+  <section class="section pastel">
+    <h2>Top Places to Visit</h2>
+    <p><strong>Umiam Lake:</strong> A vast reservoir ideal for boating and picnics.</p>
+    <p><strong>Elephant Falls:</strong> Three-tiered waterfalls surrounded by greenery.</p>
+    <p><strong>Shillong Peak:</strong> Highest point with panoramic views of the city.</p>
+    <p><strong>Ward’s Lake:</strong> A serene lake with gardens and boating facilities.</p>
+    <p><strong>Laitlum Canyons:</strong> Breathtaking gorges and trekking trails.</p>
+  </section>
+
+  <!-- Suggested 3-Day Itinerary -->
+  <section class="section">
+    <h2>Suggested 3-Day Itinerary</h2>
+    <p><strong>Day 1:</strong> Visit Umiam Lake, Ward’s Lake, and Shillong Peak.</p>
+    <p><strong>Day 2:</strong> Explore Elephant Falls, Don Bosco Museum, and Police Bazaar.</p>
+    <p><strong>Day 3:</strong> Day trip to Laitlum Canyons and Mawphlang Sacred Grove.</p>
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="section pastel">
+    <h2>Travel Tips</h2>
+    <p>✔ Shillong weather is unpredictable — keep a light jacket and umbrella.</p>
+    <p>✔ Try Khasi cuisine such as Jadoh (rice with meat) and Dohneiiong (pork with sesame).</p>
+    <p>✔ Book hotels in advance during music festivals like NH7 Weekender.</p>
+    <p>✔ Respect local traditions and nature reserves.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Gallery – Shillong Highlights</h2>
+    <div class="grid">
+      <img src="shillong slides/s1.jpg" alt="Umiam Lake">
+      <img src="shillong slides/s6.jpg" alt="Elephant Falls">
+      <img src="shillong slides/s3.jpg" alt="Shillong Peak">
+      <img src="shillong slides/s4.jpg" alt="Ward’s Lake">
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <h2>Map of Shillong</h2>
+    <p>Highlights include Umiam Lake, Elephant Falls, Shillong Peak, Ward’s Lake, and Laitlum Canyons.</p>
+    <img src="shillong slides/smap.jpg" alt="Map of Shillong" class="map">
+  </section>
+
+  <!-- Food & Culture -->
+  <section class="section pastel">
+    <h2>Local Food & Culture</h2>
+    <p><strong>Food:</strong> Jadoh, Dohneiiong, Tungrymbai, Pumaloi, and local red tea.</p>
+    <p><strong>Festivals:</strong> Nongkrem Dance Festival, Behdienkhlam, Wangala (Harvest Festival).</p>
+    <p><strong>Handicrafts:</strong> Bamboo crafts, handwoven shawls, cane furniture.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Explore India | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Federo', sans-serif; }
+body { background:#fafafa; color:#34526f; line-height:1.6; }
+
+/* Hero */
+.hero {
+  background: url("shillong slides/s2.jpg") center/cover no-repeat;
+  height: 400px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-text {
+  background: rgba(0,0,0,0.5);
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: #fff;
+}
+.hero h1 { font-size:2.5rem; margin-bottom:10px; }
+.hero p { font-size:1.2rem; }
+
+/* Sections */
+.section {
+  padding:60px 20px;
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+.section h2 { font-size:2rem; margin-bottom:20px; color:#2c3e50; }
+.section ul { list-style:none; padding:0; }
+.section li, .section p { margin-bottom:10px; text-align:center; }
+.section.pastel {
+  border-radius:15px;
+  margin:40px auto;
+  padding:40px 20px;
+  background: linear-gradient(135deg, #f2f7f9, #eef9f1);
+}
+
+/* Tips */
+.tip { font-style:italic; margin-top:15px; color:#444; }
+
+/* Gallery */
+.gallery { padding:40px 20px; text-align:center; }
+.gallery h2 { font-size:2rem; margin-bottom:20px; }
+.gallery .grid { display:flex; justify-content:center; gap:25px; flex-wrap:wrap; }
+.gallery .grid img { width:260px; height:260px; object-fit:cover; border-radius:12px; transition: transform 0.3s; }
+.gallery .grid img:hover { transform:scale(1.05); }
+
+/* Map */
+.map { margin-top:20px; max-width:100%; border-radius:15px; height:350px; object-fit:cover; }
+
+/* Footer */
+footer { background:#e6f5f7; text-align:center; padding:20px; font-size:0.9rem; color:#2c3e50; margin-top:40px; }
+</style>

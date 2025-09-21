@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hampi | Explore India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Federo&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="header"></div>
+<script>
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Hampi – The Ancient City of Ruins</h1>
+      <p>UNESCO World Heritage Site | Best Time: October – February</p>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="section">
+    <h2>About Hampi</h2>
+    <p>
+      Hampi, in Karnataka, was the capital of the Vijayanagara Empire. Known for its <strong>ancient ruins, temples, boulders, and historic architecture</strong>, Hampi is a paradise for history enthusiasts and photographers.
+    </p>
+  </section>
+
+  <!-- Best Time -->
+  <section class="section pastel">
+    <h2>Best Time to Visit</h2>
+    <ul>
+      <li><strong>October – February:</strong> Pleasant weather, ideal for sightseeing and trekking.</li>
+      <li><strong>March – May:</strong> Hot summers; explore early morning or late evening.</li>
+      <li><strong>June – September:</strong> Monsoon season, lush green surroundings but slippery rocks.</li>
+    </ul>
+    <p class="tip">💡 Tip: Wear comfortable shoes for walking among ruins and rocky terrain.</p>
+  </section>
+
+  <!-- How to Reach -->
+  <section class="section">
+    <h2>How to Reach</h2>
+    <p><strong>By Air:</strong> Hubli Airport (~165 km) or Bengaluru Airport (~350 km).</p>
+    <p><strong>By Road:</strong> Well connected to Hospet (~13 km), Bangalore, and Goa by bus and taxis.</p>
+    <p><strong>By Train:</strong> Hospet Junction is nearest railway station; frequent trains from major cities.</p>
+  </section>
+
+  <!-- Top Places -->
+  <section class="section pastel">
+    <h2>Top Places to Visit</h2>
+    <p><strong>Vittala Temple Complex:</strong> Famous for stone chariot and musical pillars.</p>
+    <p><strong>Virupaksha Temple:</strong> Ancient temple still in use, dedicated to Lord Shiva.</p>
+    <p><strong>Hampi Bazaar:</strong> Historical market street leading to Virupaksha Temple.</p>
+    <p><strong>Matanga Hill:</strong> Best spot for sunrise/sunset with panoramic views of Hampi ruins.</p>
+  </section>
+
+  <!-- Suggested Itinerary -->
+  <section class="section">
+    <h2>Suggested 2-Day Itinerary</h2>
+    <p><strong>Day 1:</strong> Explore Virupaksha Temple, Hampi Bazaar, and Tungabhadra River.</p>
+    <p><strong>Day 2:</strong> Visit Vittala Temple Complex, Matanga Hill, and royal enclosures.</p>
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="section pastel">
+    <h2>Travel Tips</h2>
+    <p>✔ Carry water and sunscreen; Hampi can be hot during day.</p>
+    <p>✔ Wear comfortable shoes; lots of walking and climbing rocks.</p>
+    <p>✔ Hire a local guide to explore historical ruins with context.</p>
+    <p>✔ Respect temple rules and avoid littering near heritage sites.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Gallery – Hampi Highlights</h2>
+    <div class="grid">
+      <img src="hampi slides/h3.jpg" alt="Vittala Temple">
+      <img src="hampi slides/h4.jpg" alt="Virupaksha Temple">
+      <img src="hampi slides/h5.jpg" alt="Hampi Bazaar">
+      <img src="hampi slides/h6.jpg" alt="Matanga Hill Sunrise">
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <h2>Map of Hampi</h2>
+    <p>Shows Vittala Temple, Virupaksha Temple, Hampi Bazaar, and Matanga Hill.</p>
+    <img src="hampi slides/map.jpeg" alt="Map of Hampi showing main attractions" class="map">
+  </section>
+
+  <!-- Food & Culture -->
+  <section class="section pastel">
+    <h2>Local Food & Culture</h2>
+    <p><strong>Food:</strong> Jolada Rotti with Brinjal Curry, Ragi Mudde, local South Indian thalis.</p>
+    <p><strong>Festivals:</strong> Hampi Utsav (Vijaya Utsav), cultural performances, traditional music & dance.</p>
+    <p><strong>Handicrafts:</strong> Stone carvings, terracotta artifacts, and local souvenirs.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Explore India | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Federo', sans-serif; }
+body { background:#fafafa; color:#34526f; line-height:1.6; }
+
+/* Hero */
+.hero {
+  background: url('hampi slides/h2.jpg') center/cover no-repeat;
+  height: 400px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-text {
+  background: rgba(0,0,0,0.5);
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: #fff;
+}
+.hero h1 { font-size:2.5rem; margin-bottom:10px; }
+.hero p { font-size:1.2rem; }
+
+/* Sections */
+.section {
+  padding:60px 20px;
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+.section h2 { font-size:2rem; margin-bottom:20px; color:#2c3e50; }
+.section ul { list-style:none; padding:0; }
+.section li, .section p { margin-bottom:10px; text-align:center; }
+.section.pastel {
+  border-radius:15px;
+  margin:40px auto;
+  padding:40px 20px;
+  background: linear-gradient(135deg, #f5e6cc, #e3f2f1);
+}
+
+/* Tips */
+.tip { font-style:italic; margin-top:15px; color:#444; }
+
+/* Gallery */
+.gallery { padding:40px 20px; text-align:center; }
+.gallery h2 { font-size:2rem; margin-bottom:20px; }
+.gallery .grid { display:flex; justify-content:center; gap:25px; flex-wrap:wrap; }
+.gallery .grid img { width:260px; height:260px; object-fit:cover; border-radius:12px; transition: transform 0.3s; }
+.gallery .grid img:hover { transform:scale(1.05); }
+
+/* Map */
+.map { margin-top:20px; max-width:100%; border-radius:15px; height:350px; object-fit:cover; }
+
+/* Footer */
+footer { background:#cfe3dc; text-align:center; padding:20px; font-size:0.9rem; color:#2c3e50; margin-top:40px; }
+</style>

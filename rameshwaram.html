@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rameshwaram | Explore India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Federo&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="header"></div>
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+  </script>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Rameshwaram – The Spiritual Gateway</h1>
+      <p>Pilgrimage | Temples | Beaches | Best Time: October – April</p>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="section">
+    <h2>About Rameshwaram</h2>
+    <p>
+      Rameshwaram, located in Tamil Nadu, is one of the <strong>holiest pilgrimage destinations in India</strong>. 
+      It is famous for the <strong>Ramanathaswamy Temple</strong>, sacred rituals, and stunning natural beauty, 
+      including pristine beaches and the historic Pamban Bridge.
+    </p>
+  </section>
+
+  <!-- Best Time -->
+  <section class="section pastel">
+    <h2>Best Time to Visit</h2>
+    <ul>
+      <li><strong>October – April:</strong> Pleasant weather, perfect for temple visits and sightseeing.</li>
+      <li><strong>May – June:</strong> Hot summer, best avoided for daytime travel.</li>
+      <li><strong>July – September:</strong> Monsoon showers make the town lush and scenic.</li>
+    </ul>
+    <p class="tip">💡 Tip: Early mornings are best for temple darshan and beach visits.</p>
+  </section>
+
+  <!-- How to Reach -->
+  <section class="section">
+    <h2>How to Reach</h2>
+    <p><strong>By Air:</strong> Nearest airport is Madurai (175 km), connected to major Indian cities.</p>
+    <p><strong>By Train:</strong> Rameshwaram Railway Station connects with Chennai, Madurai, and Trichy.</p>
+    <p><strong>By Road:</strong> Well-connected via NH49, buses and taxis from Madurai and other Tamil Nadu towns.</p>
+  </section>
+
+  <!-- Top Places -->
+  <section class="section pastel">
+    <h2>Top Places to Visit</h2>
+    <p><strong>Ramanathaswamy Temple:</strong> Famous for its long corridors and sacred Shiva lingam.</p>
+    <p><strong>Pamban Bridge:</strong> Historic railway bridge over the sea, an engineering marvel.</p>
+    <p><strong>Dhanushkodi:</strong> Ghost town at the southern tip with serene beaches.</p>
+    <p><strong>Agnitheertham:</strong> Sacred sea near the temple for holy dips.</p>
+    <p><strong>Kothandaramaswamy Temple:</strong> Connected to Ramayana legends.</p>
+  </section>
+
+  <!-- Suggested 3-Day Itinerary -->
+  <section class="section">
+    <h2>Suggested 3-Day Itinerary</h2>
+    <p><strong>Day 1:</strong> Arrival, visit Ramanathaswamy Temple and Agnitheertham.</p>
+    <p><strong>Day 2:</strong> Excursion to Dhanushkodi, Pamban Bridge, and Kothandaramaswamy Temple.</p>
+    <p><strong>Day 3:</strong> Explore beaches, local markets, and depart.</p>
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="section pastel">
+    <h2>Travel Tips</h2>
+    <p>✔ Dress modestly inside temples.</p>
+    <p>✔ Remove footwear before entering temple premises.</p>
+    <p>✔ Carry sunscreen, hats, and water for beach visits.</p>
+    <p>✔ Respect temple customs and rituals.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Gallery – Rameshwaram Highlights</h2>
+    <div class="grid">
+      <img src="rameshwaram slides/r2.jpg" alt="Ramanathaswamy Temple">
+      <img src="rameshwaram slides/r6.jpg" alt="Pamban Bridge">
+      <img src="rameshwaram slides/r4.jpg" alt="Dhanushkodi Beach">
+      <img src="rameshwaram slides/r3.jpg" alt="Agnitheertham Sea">
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <h2>Map of Rameshwaram</h2>
+    <p>Shows major attractions like Ramanathaswamy Temple, Dhanushkodi, and Pamban Bridge.</p>
+    <img src="rameshwaram slides/hmap.jpeg" alt="Map of Rameshwaram" class="map">
+  </section>
+
+  <!-- Food & Culture -->
+  <section class="section pastel">
+    <h2>Local Food & Culture</h2>
+    <p><strong>Food:</strong> South Indian meals, Idli, Dosa, Sambar, Filter Coffee, and seafood.</p>
+    <p><strong>Culture:</strong> Deeply spiritual atmosphere with rituals, bhajans, and Ramayana heritage.</p>
+    <p><strong>Handicrafts:</strong> Conch shells, handicrafts, and souvenirs related to Ramayana.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Explore India | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Federo', sans-serif; }
+body { background:#fafafa; color:#34526f; line-height:1.6; }
+
+/* Hero */
+.hero {
+  background: url("rameshwaram slides/r6.jpg") center/cover no-repeat;
+  height: 400px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-text {
+  background: rgba(0,0,0,0.5);
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: #fff;
+}
+.hero h1 { font-size:2.5rem; margin-bottom:10px; }
+.hero p { font-size:1.2rem; }
+
+/* Sections */
+.section {
+  padding:60px 20px;
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+.section h2 { font-size:2rem; margin-bottom:20px; color:#2c3e50; }
+.section ul { list-style:none; padding:0; }
+.section li, .section p { margin-bottom:10px; text-align:center; }
+.section.pastel {
+  border-radius:15px;
+  margin:40px auto;
+  padding:40px 20px;
+  background: linear-gradient(135deg, #f5e6cc, #e3f2f1);
+}
+
+/* Tips */
+.tip { font-style:italic; margin-top:15px; color:#444; }
+
+/* Gallery */
+.gallery { padding:40px 20px; text-align:center; }
+.gallery h2 { font-size:2rem; margin-bottom:20px; }
+.gallery .grid { display:flex; justify-content:center; gap:25px; flex-wrap:wrap; }
+.gallery .grid img { width:260px; height:260px; object-fit:cover; border-radius:12px; transition: transform 0.3s; }
+.gallery .grid img:hover { transform:scale(1.05); }
+
+/* Map */
+.map { margin-top:20px; max-width:100%; border-radius:15px; height:350px; object-fit:cover; }
+
+/* Footer */
+footer { background:#cfe3dc; text-align:center; padding:20px; font-size:0.9rem; color:#2c3e50; margin-top:40px; }
+</style>

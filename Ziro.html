@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ziro Valley | Explore India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Federo&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="header"></div>
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+  </script>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Ziro Valley – Land of the Apatanis</h1>
+      <p>Pine Hills | Rice Fields | Music | Best Time: March – October</p>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="section">
+    <h2>About Ziro Valley</h2>
+    <p>
+      Nestled in Arunachal Pradesh, Ziro Valley is a UNESCO World Heritage Site (tentative) 
+      and home to the <strong>Apatanis</strong>, one of the most colorful tribes of the Northeast.  
+      Known for its <strong>lush rice fields, pine-clad hills, bamboo groves, and cool climate</strong>, 
+      Ziro is a paradise for culture seekers, trekkers, and music lovers.
+    </p>
+  </section>
+
+  <!-- Best Time -->
+  <section class="section pastel">
+    <h2>Best Time to Visit</h2>
+    <ul>
+      <li><strong>March – May:</strong> Spring blossoms, pleasant climate.</li>
+      <li><strong>June – September:</strong> Green monsoon vibes, though heavy rains possible.</li>
+      <li><strong>September:</strong> Ziro Music Festival, a must-experience!</li>
+      <li><strong>October:</strong> Post-monsoon clear skies, perfect for trekking.</li>
+      <li><strong>November – February:</strong> Cold winters but scenic.</li>
+    </ul>
+    <p class="tip">💡 Tip: Plan in late September if you want to attend the famous Ziro Music Festival.</p>
+  </section>
+
+  <!-- How to Reach -->
+  <section class="section">
+    <h2>How to Reach</h2>
+    <p><strong>By Air:</strong> The nearest airport is at Tezpur (280 km) and Guwahati (450 km).</p>
+    <p><strong>By Train:</strong> Nearest railway station is Naharlagun (100 km) near Itanagar.</p>
+    <p><strong>By Road:</strong> Well connected by road from Itanagar, Guwahati, and other NE towns.</p>
+    <p><strong>Note:</strong> Inner Line Permit (ILP) is required for Indian tourists and Protected Area Permit (PAP) for foreigners.</p>
+  </section>
+
+  <!-- Top Attractions -->
+  <section class="section pastel">
+    <h2>Top Attractions in Ziro Valley</h2>
+    <p><strong>Talley Valley Wildlife Sanctuary:</strong> Dense forests, orchids, and rare species.</p>
+    <p><strong>Ziro Music Festival:</strong> Annual international music festival in September.</p>
+    <p><strong>Apatanis Villages:</strong> Experience unique culture, tattoos, and traditional farming.</p>
+    <p><strong>Meghna Cave Temple:</strong> Ancient 5000-year-old Shiva temple with great views.</p>
+    <p><strong>Pine Hills & Bamboo Groves:</strong> Serene landscapes for walks and photography.</p>
+  </section>
+
+  <!-- Suggested 3-Day Itinerary -->
+  <section class="section">
+    <h2>Suggested 3-Day Itinerary</h2>
+    <p><strong>Day 1:</strong> Explore Apatani villages, Meghna Cave Temple, and local markets.</p>
+    <p><strong>Day 2:</strong> Trek to Talley Valley, enjoy pine forests and paddy fields.</p>
+    <p><strong>Day 3:</strong> Attend Ziro Music Festival (if in September) or explore hilltop viewpoints.</p>
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="section pastel">
+    <h2>Travel Tips</h2>
+    <p>✔ Carry ILP (Inner Line Permit) before entering Arunachal Pradesh.</p>
+    <p>✔ Respect Apatani traditions and ask before photographing locals.</p>
+    <p>✔ Pack warm clothes – nights can be chilly even in summer.</p>
+    <p>✔ Network may be weak – enjoy digital detox in nature.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Gallery – Ziro Highlights</h2>
+    <div class="grid">
+      <img src="ziro slides/z6.jpg" alt="Ziro Valley Rice Fields">
+      <img src="ziro slides/z2.jpg" alt="Apatani Village">
+      <img src="ziro slides/z4.jpg" alt="Ziro Music Festival">
+      <img src="ziro slides/z3.jpg" alt="Talley Valley">
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <h2>Map of Ziro Valley</h2>
+    <p>Main attractions: Apatani Villages, Talley Valley, Meghna Temple, Pine Hills.</p>
+    <img src="ziro slides/zmap.jpg" alt="Map of Ziro Valley" class="map">
+  </section>
+
+  <!-- Food & Culture -->
+  <section class="section pastel">
+    <h2>Local Food & Culture</h2>
+    <p><strong>Food:</strong> Apong (local rice beer), bamboo shoot dishes, smoked meat, and rice.</p>
+    <p><strong>Festivals:</strong> Myoko Festival (March), Dree Festival (July), Ziro Music Festival (September).</p>
+    <p><strong>Handicrafts:</strong> Bamboo and cane crafts, handwoven textiles of the Apatanis.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Explore India | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Federo', sans-serif; }
+body { background:#fafafa; color:#34526f; line-height:1.6; }
+
+/* Hero */
+.hero {
+  background: url("ziro slides/z4.jpg") center/cover no-repeat;
+  height: 400px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-text {
+  background: rgba(0,0,0,0.5);
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: #fff;
+}
+.hero h1 { font-size:2.5rem; margin-bottom:10px; }
+.hero p { font-size:1.2rem; }
+
+/* Sections */
+.section {
+  padding:60px 20px;
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+.section h2 { font-size:2rem; margin-bottom:20px; color:#2c3e50; }
+.section ul { list-style:none; padding:0; }
+.section li, .section p { margin-bottom:10px; text-align:center; }
+.section.pastel {
+  border-radius:15px;
+  margin:40px auto;
+  padding:40px 20px;
+  background: linear-gradient(135deg, #eef9f1, #f9f6e8);
+}
+
+/* Tips */
+.tip { font-style:italic; margin-top:15px; color:#444; }
+
+/* Gallery */
+.gallery { padding:40px 20px; text-align:center; }
+.gallery h2 { font-size:2rem; margin-bottom:20px; }
+.gallery .grid { display:flex; justify-content:center; gap:25px; flex-wrap:wrap; }
+.gallery .grid img { width:260px; height:260px; object-fit:cover; border-radius:12px; transition: transform 0.3s; }
+.gallery .grid img:hover { transform:scale(1.05); }
+
+/* Map */
+.map { margin-top:20px; max-width:100%; border-radius:15px; height:350px; object-fit:cover; }
+
+/* Footer */
+footer { background:#e6f5ef; text-align:center; padding:20px; font-size:0.9rem; color:#2c3e50; margin-top:40px; }
+</style>

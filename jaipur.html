@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaipur | Explore India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Federo&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="header"></div>
+<script>
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Jaipur – The Pink City of Royal Heritage</h1>
+      <p>Famous for Palaces, Forts & Culture | Best Time: October – March</p>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="section">
+    <h2>About Jaipur</h2>
+    <p>
+      Jaipur, the capital of Rajasthan, is known as the <strong>Pink City</strong> for its terracotta-colored buildings. 
+      It is famous for <strong>majestic forts, royal palaces, colorful bazaars, and rich culture</strong>, blending history and vibrant local life.
+    </p>
+  </section>
+
+  <!-- Best Time -->
+  <section class="section pastel">
+    <h2>Best Time to Visit</h2>
+    <ul>
+      <li><strong>October – March:</strong> Pleasant weather, perfect for sightseeing.</li>
+      <li><strong>April – June:</strong> Hot summers, but mornings and evenings are tolerable.</li>
+      <li><strong>July – September:</strong> Monsoon with mild rain, greener surroundings.</li>
+    </ul>
+    <p class="tip">💡 Tip: Carry light cotton clothes in summer and warm clothes in winter mornings/evenings.</p>
+  </section>
+
+  <!-- How to Reach -->
+  <section class="section">
+    <h2>How to Reach</h2>
+    <p><strong>By Air:</strong> Jaipur International Airport connects to Delhi, Mumbai, Bengaluru, and other major cities.</p>
+    <p><strong>By Road:</strong> Connected by highways to Delhi, Agra, Jodhpur, and Udaipur. Buses and taxis available.</p>
+    <p><strong>By Train:</strong> Jaipur Railway Station has frequent trains to major Indian cities.</p>
+  </section>
+
+  <!-- Top Places -->
+  <section class="section pastel">
+    <h2>Top Places to Visit</h2>
+    <p><strong>Amer Fort:</strong> Hilltop fort with stunning architecture and light shows.</p>
+    <p><strong>City Palace:</strong> Royal palace with museums, courtyards, and gardens.</p>
+    <p><strong>Hawa Mahal:</strong> Iconic “Palace of Winds” with unique facade.</p>
+    <p><strong>Jal Mahal:</strong> Palace in the middle of Man Sagar Lake.</p>
+  </section>
+
+  <!-- Suggested Itinerary -->
+  <section class="section">
+    <h2>Suggested 3-Day Itinerary</h2>
+    <p><strong>Day 1:</strong> Visit Amer Fort, Jaigarh Fort, and nearby markets.</p>
+    <p><strong>Day 2:</strong> Explore City Palace, Jantar Mantar, Hawa Mahal, and Albert Hall Museum.</p>
+    <p><strong>Day 3:</strong> Morning visit to Jal Mahal, shopping at bazaars, and local food tasting.</p>
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="section pastel">
+    <h2>Travel Tips</h2>
+    <p>✔ Carry water and sunscreen; Jaipur can be hot during summers.</p>
+    <p>✔ Wear comfortable shoes for walking in forts and palaces.</p>
+    <p>✔ Bargain in local markets for handicrafts and textiles.</p>
+    <p>✔ Respect local traditions at temples and heritage sites.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Gallery – Jaipur Highlights</h2>
+    <div class="grid">
+      <img src="jaipur slides/j3.jpg" alt="Amer Fort">
+      <img src="jaipur slides/j4.jpg" alt="Hawa Mahal">
+      <img src="jaipur slides/j5.jpg" alt="City Palace">
+      <img src="jaipur slides/j6.jpg" alt="Jal Mahal">
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <h2>Map of Jaipur</h2>
+    <p>Shows Amer Fort, City Palace, Hawa Mahal, and Jal Mahal.</p>
+    <img src="jaipur slides/map.jpeg" alt="Map of Jaipur showing main attractions" class="map">
+  </section>
+
+  <!-- Food & Culture -->
+  <section class="section pastel">
+    <h2>Local Food & Culture</h2>
+    <p><strong>Food:</strong> Dal Baati Churma, Ghevar, Laal Maas, Kachori, Pyaz Ki Kachori.</p>
+    <p><strong>Festivals:</strong> Jaipur Literature Festival, Teej, Gangaur, Elephant Festival.</p>
+    <p><strong>Handicrafts:</strong> Jewelry, textiles, block prints, pottery, and miniature paintings.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Explore India | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Federo', sans-serif; }
+body { background:#fafafa; color:#34526f; line-height:1.6; }
+
+/* Hero */
+.hero {
+  background: url('jaipur slides/j2.jpg') center/cover no-repeat;
+  height: 400px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-text {
+  background: rgba(0,0,0,0.5);
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: #fff;
+}
+.hero h1 { font-size:2.5rem; margin-bottom:10px; }
+.hero p { font-size:1.2rem; }
+
+/* Sections */
+.section {
+  padding:60px 20px;
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+.section h2 { font-size:2rem; margin-bottom:20px; color:#2c3e50; }
+.section ul { list-style:none; padding:0; }
+.section li, .section p { margin-bottom:10px; text-align:center; }
+.section.pastel {
+  border-radius:15px;
+  margin:40px auto;
+  padding:40px 20px;
+  background: linear-gradient(135deg, #f5e6cc, #e3f2f1);
+}
+
+/* Tips */
+.tip { font-style:italic; margin-top:15px; color:#444; }
+
+/* Gallery */
+.gallery { padding:40px 20px; text-align:center; }
+.gallery h2 { font-size:2rem; margin-bottom:20px; }
+.gallery .grid { display:flex; justify-content:center; gap:25px; flex-wrap:wrap; }
+.gallery .grid img { width:260px; height:260px; object-fit:cover; border-radius:12px; transition: transform 0.3s; }
+.gallery .grid img:hover { transform:scale(1.05); }
+
+/* Map */
+.map { margin-top:20px; max-width:100%; border-radius:15px; height:350px; object-fit:cover; }
+
+/* Footer */
+footer { background:#cfe3dc; text-align:center; padding:20px; font-size:0.9rem; color:#2c3e50; margin-top:40px; }
+</style>

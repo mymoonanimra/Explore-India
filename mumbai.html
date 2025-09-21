@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mumbai | Explore India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Federo&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="header"></div>
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+  </script>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Mumbai – The City of Dreams</h1>
+      <p>Bollywood | Beaches | Gateway of India | Best Time: October – March</p>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="section">
+    <h2>About Mumbai</h2>
+    <p>
+      Mumbai, the financial capital of India, is a bustling metropolis on the Arabian Sea.  
+      Known as the <strong>City of Dreams</strong>, it is home to Bollywood, iconic colonial architecture,  
+      world-class street food, luxury shopping, and a never-sleeping lifestyle.  
+      From historic landmarks like the Gateway of India to modern marvels like Bandra-Worli Sea Link,  
+      Mumbai blends tradition and modernity seamlessly.
+    </p>
+  </section>
+
+  <!-- Best Time -->
+  <section class="section pastel">
+    <h2>Best Time to Visit</h2>
+    <ul>
+      <li><strong>October – March:</strong> Pleasant winter weather, best for sightseeing.</li>
+      <li><strong>April – May:</strong> Hot and humid, but less crowded.</li>
+      <li><strong>June – September:</strong> Monsoon magic – lush green, romantic rains, but heavy showers.</li>
+    </ul>
+    <p class="tip">💡 Tip: If you love the rains, monsoons in Mumbai are an unforgettable experience!</p>
+  </section>
+
+  <!-- How to Reach -->
+  <section class="section">
+    <h2>How to Reach</h2>
+    <p><strong>By Air:</strong> Chhatrapati Shivaji Maharaj International Airport connects globally.</p>
+    <p><strong>By Train:</strong> Major stations include CSMT, Dadar, Bandra Terminus, and Lokmanya Tilak Terminus.</p>
+    <p><strong>By Road:</strong> Well connected with Pune, Goa, Nashik, and Gujarat via expressways.</p>
+  </section>
+
+  <!-- Top Attractions -->
+  <section class="section pastel">
+    <h2>Top Attractions in Mumbai</h2>
+    <p><strong>Gateway of India:</strong> Iconic colonial-era arch by the Arabian Sea.</p>
+    <p><strong>Marine Drive:</strong> The "Queen’s Necklace" – perfect for sunset walks.</p>
+    <p><strong>Elephanta Caves:</strong> UNESCO World Heritage site with rock-cut sculptures.</p>
+    <p><strong>Chhatrapati Shivaji Maharaj Terminus:</strong> Victorian Gothic masterpiece.</p>
+    <p><strong>Juhu & Chowpatty Beaches:</strong> Famous for street food like bhel puri & pav bhaji.</p>
+    <p><strong>Bandra-Worli Sea Link:</strong> Engineering marvel with stunning sea views.</p>
+    <p><strong>Colaba Causeway:</strong> Shopper’s paradise.</p>
+    <p><strong>Sanjay Gandhi National Park:</strong> Green escape with Kanheri Caves.</p>
+  </section>
+
+  <!-- Suggested 3-Day Itinerary -->
+  <section class="section">
+    <h2>Suggested 3-Day Itinerary</h2>
+    <p><strong>Day 1:</strong> Gateway of India, Elephanta Caves, Colaba Causeway shopping.</p>
+    <p><strong>Day 2:</strong> Marine Drive, Chowpatty Beach, CST, Bandra-Worli Sea Link.</p>
+    <p><strong>Day 3:</strong> Juhu Beach, Bollywood studio tour, Sanjay Gandhi National Park.</p>
+  </section>
+
+  <!-- Food & Culture -->
+  <section class="section pastel">
+    <h2>Local Food & Culture</h2>
+    <p><strong>Street Food:</strong> Vada Pav, Pav Bhaji, Bhel Puri, Misal Pav, Kebabs.</p>
+    <p><strong>Festivals:</strong> Ganesh Chaturthi, Kala Ghoda Arts Festival, Mumbai Film Festival.</p>
+    <p><strong>Culture:</strong> Cosmopolitan lifestyle with strong Marathi heritage, theatre, and cinema.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Gallery – Mumbai Highlights</h2>
+    <div class="grid">
+      <img src="mumbai slides/m1.jpg" alt="Gateway of India">
+      <img src="mumbai slides/m3.jpg" alt="Marine Drive at Night">
+      <img src="mumbai slides/m4.jpg" alt="Bandra Worli Sea Link">
+      <img src="mumbai slides/m2.jpg" alt="Chhatrapati Shivaji Terminus">
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <h2>Map of Mumbai</h2>
+    <p>Main attractions: Gateway of India, Marine Drive, Elephanta Caves, Juhu Beach.</p>
+    <img src="mumbai slides/mmap.jpg" alt="Map of Mumbai" class="map">
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="section pastel">
+    <h2>Travel Tips</h2>
+    <p>✔ Use Mumbai Local Trains & Metro for quick travel – but avoid peak rush hours.</p>
+    <p>✔ Keep an umbrella if visiting during monsoons.</p>
+    <p>✔ Try local street food but from clean stalls.</p>
+    <p>✔ Stay near South Mumbai for sightseeing or Bandra for nightlife.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Explore India | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Federo', sans-serif; }
+body { background:#fafafa; color:#34495e; line-height:1.6; }
+
+/* Hero */
+.hero {
+  background: url("mumbai slides/m2.jpg") center/cover no-repeat;
+  height: 400px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-text {
+  background: rgba(0,0,0,0.5);
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: #fff;
+}
+.hero h1 { font-size:2.5rem; margin-bottom:10px; }
+.hero p { font-size:1.2rem; }
+
+/* Sections */
+.section {
+  padding:60px 20px;
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+.section h2 { font-size:2rem; margin-bottom:20px; color:#2c3e50; }
+.section ul { list-style:none; padding:0; }
+.section li, .section p { margin-bottom:10px; text-align:center; }
+.section.pastel {
+  border-radius:15px;
+  margin:40px auto;
+  padding:40px 20px;
+  background: linear-gradient(135deg, #eef4fa, #fef9ec);
+}
+
+/* Tips */
+.tip { font-style:italic; margin-top:15px; color:#444; }
+
+/* Gallery */
+.gallery { padding:40px 20px; text-align:center; }
+.gallery h2 { font-size:2rem; margin-bottom:20px; }
+.gallery .grid { display:flex; justify-content:center; gap:25px; flex-wrap:wrap; }
+.gallery .grid img { width:260px; height:260px; object-fit:cover; border-radius:12px; transition: transform 0.3s; }
+.gallery .grid img:hover { transform:scale(1.05); }
+
+/* Map */
+.map { margin-top:20px; max-width:100%; border-radius:15px; height:350px; object-fit:cover; }
+
+/* Footer */
+footer { background:#e6f0f5; text-align:center; padding:20px; font-size:0.9rem; color:#2c3e50; margin-top:40px; }
+</style>

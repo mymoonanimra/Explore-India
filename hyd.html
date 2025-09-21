@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hyderabad | Explore India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Federo&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="header"></div>
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+  </script>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Hyderabad – The City of Pearls</h1>
+      <p>Heritage | Cuisine | Modern IT Hub | Best Time: October – March</p>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="section">
+    <h2>About Hyderabad</h2>
+    <p>
+      Hyderabad, the capital of Telangana, is a unique blend of <strong>royal heritage, vibrant bazaars, and modern technology</strong>.  
+      Known for the Charminar, Golconda Fort, and delicious Hyderabadi biryani, it beautifully balances history with its booming IT sector, Cyberabad.
+    </p>
+  </section>
+
+  <!-- Best Time -->
+  <section class="section pastel">
+    <h2>Best Time to Visit</h2>
+    <ul>
+      <li><strong>October – March:</strong> Pleasant winter weather, ideal for sightseeing.</li>
+      <li><strong>April – June:</strong> Very hot, not recommended for outdoor trips.</li>
+      <li><strong>July – September:</strong> Monsoon showers, lush surroundings.</li>
+    </ul>
+    <p class="tip">💡 Tip: Winter evenings are perfect for strolling through Charminar market.</p>
+  </section>
+
+  <!-- How to Reach -->
+  <section class="section">
+    <h2>How to Reach</h2>
+    <p><strong>By Air:</strong> Rajiv Gandhi International Airport connects globally.</p>
+    <p><strong>By Train:</strong> Hyderabad, Secunderabad & Kacheguda railway stations link to all major cities.</p>
+    <p><strong>By Road:</strong> Well-connected by highways and state transport buses.</p>
+    <p><strong>By Metro:</strong> Hyderabad Metro Rail connects major city hubs.</p>
+  </section>
+
+  <!-- Top Places -->
+  <section class="section pastel">
+    <h2>Top Places to Visit</h2>
+    <p><strong>Charminar:</strong> Iconic 16th-century monument and lively bazaars.</p>
+    <p><strong>Golconda Fort:</strong> Historic fort with incredible acoustics and evening light show.</p>
+    <p><strong>Hussain Sagar Lake:</strong> Famous lake with a giant Buddha statue.</p>
+    <p><strong>Chowmahalla Palace:</strong> Nizam-era palace with royal grandeur.</p>
+    <p><strong>Ramoji Film City:</strong> World’s largest film studio complex.</p>
+  </section>
+
+  <!-- Suggested 3-Day Itinerary -->
+  <section class="section">
+    <h2>Suggested 3-Day Itinerary</h2>
+    <p><strong>Day 1:</strong> Charminar, Mecca Masjid, Laad Bazaar, evening at Hussain Sagar.</p>
+    <p><strong>Day 2:</strong> Golconda Fort, Chowmahalla Palace, Salar Jung Museum.</p>
+    <p><strong>Day 3:</strong> Ramoji Film City or HITEC City tour, shopping and departure.</p>
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="section pastel">
+    <h2>Travel Tips</h2>
+    <p>✔ Don’t miss Hyderabadi Biryani and Irani Chai at local cafés.</p>
+    <p>✔ Bargain at Laad Bazaar for bangles, pearls, and traditional items.</p>
+    <p>✔ Evenings are best for exploring outdoor monuments.</p>
+    <p>✔ Book Ramoji Film City tickets in advance for convenience.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Gallery – Hyderabad Highlights</h2>
+    <div class="grid">
+      <img src="hyd slides/h3.jpg" alt="Charminar">
+      <img src="hyd slides/h4.jpg" alt="Golconda Fort">
+      <img src="hyd slides/h6.jpg" alt="Chowmahalla Palace">
+      <img src="hyd slides/h2.jpg" alt="Hussain Sagar Lake">
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <h2>Map of Hyderabad</h2>
+    <p>Highlights include Charminar, Golconda, Hussain Sagar, Chowmahalla Palace, and HITEC City.</p>
+    <img src="hyd slides/hmap.jpg" alt="Map of Hyderabad" class="map">
+  </section>
+
+  <!-- Food & Culture -->
+  <section class="section pastel">
+    <h2>Local Food & Culture</h2>
+    <p><strong>Food:</strong> Hyderabadi Biryani, Haleem, Irani Chai, Osmania Biscuits.</p>
+    <p><strong>Festivals:</strong> Ramadan, Bonalu, Deccan Festival.</p>
+    <p><strong>Handicrafts:</strong> Pearls, Bidriware, Kalamkari, Laad Bazaar bangles.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Explore India | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Federo', sans-serif; }
+body { background:#fafafa; color:#34526f; line-height:1.6; }
+
+/* Hero */
+.hero {
+  background: url("hyd slides/h4.jpg") center/cover no-repeat;
+  height: 400px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-text {
+  background: rgba(0,0,0,0.5);
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: #fff;
+}
+.hero h1 { font-size:2.5rem; margin-bottom:10px; }
+.hero p { font-size:1.2rem; }
+
+/* Sections */
+.section {
+  padding:60px 20px;
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+.section h2 { font-size:2rem; margin-bottom:20px; color:#2c3e50; }
+.section ul { list-style:none; padding:0; }
+.section li, .section p { margin-bottom:10px; text-align:center; }
+.section.pastel {
+  border-radius:15px;
+  margin:40px auto;
+  padding:40px 20px;
+  background: linear-gradient(135deg, #f5e6cc, #e3f2f1);
+}
+
+/* Tips */
+.tip { font-style:italic; margin-top:15px; color:#444; }
+
+/* Gallery */
+.gallery { padding:40px 20px; text-align:center; }
+.gallery h2 { font-size:2rem; margin-bottom:20px; }
+.gallery .grid { display:flex; justify-content:center; gap:25px; flex-wrap:wrap; }
+.gallery .grid img { width:260px; height:260px; object-fit:cover; border-radius:12px; transition: transform 0.3s; }
+.gallery .grid img:hover { transform:scale(1.05); }
+
+/* Map */
+.map { margin-top:20px; max-width:100%; border-radius:15px; height:350px; object-fit:cover; }
+
+/* Footer */
+footer { background:#cfe3dc; text-align:center; padding:20px; font-size:0.9rem; color:#2c3e50; margin-top:40px; }
+</style>

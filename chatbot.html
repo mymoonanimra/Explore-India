@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Buddy Chatbot</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; }
+
+    /* Floating Button */
+    #chat-toggle {
+      position: fixed; bottom: 20px; right: 20px;
+      background: #a78bfa; /* pastel lavender */
+      color: white; width: 60px; height: 60px;
+      border-radius: 50%; border: none;
+      font-size: 24px; cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.2s;
+    }
+    #chat-toggle:hover { transform: scale(1.1); }
+
+    /* Chat Window */
+    #chatbot {
+      position: fixed; bottom: 90px; right: 20px;
+      width: 340px; max-width: 90%;
+      background: #fff8f0; /* pastel peach background */
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      display: none; flex-direction: column;
+      overflow: hidden; animation: slideUp 0.4s ease;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Header */
+    #chat-header {
+      background: #a78bfa; /* pastel lavender */
+      color: white; padding: 12px; text-align: center;
+      font-weight: bold; font-size: 16px;
+    }
+
+    /* Body */
+    #chat-body {
+      display: flex; flex-direction: column;
+      height: 380px;
+    }
+
+    /* Messages */
+    #chat-messages {
+      flex: 1; overflow-y: auto; padding: 12px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .msg {
+      padding: 10px 14px; border-radius: 18px;
+      max-width: 75%; word-wrap: break-word;
+      font-size: 14px;
+    }
+    .user-msg {
+      align-self: flex-end; background: #b9fbc0; /* pastel mint */
+      border-bottom-right-radius: 4px;
+    }
+    .bot-msg {
+      align-self: flex-start; background: #ffcfd2; /* pastel pink */
+      border-bottom-left-radius: 4px;
+    }
+
+    /* Input */
+    #chat-input {
+      border: none; padding: 12px; font-size: 14px;
+      border-top: 1px solid #eee;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Toggle Button -->
+<button id="chat-toggle">💬</button>
+
+<!-- Chat Window -->
+<div id="chatbot">
+  <div id="chat-header">AI Buddy 🤖</div>
+  <div id="chat-body">
+    <div id="chat-messages"></div>
+    <input type="text" id="chat-input" placeholder="Ask me about India...">
+  </div>
+</div>
+
+<script>
+// Levenshtein Distance for fuzzy matching
+function levenshtein(a, b) {
+  const matrix = Array.from({ length: a.length + 1 }, () => []);
+  for (let i = 0; i <= a.length; i++) matrix[i][0] = i;
+  for (let j = 0; j <= b.length; j++) matrix[0][j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      matrix[i][j] = Math.min(
+        matrix[i - 1][j] + 1,
+        matrix[i][j - 1] + 1,
+        matrix[i - 1][j - 1] + cost
+      );
+    }
+  }
+  return matrix[a.length][b.length];
+}
+
+// Knowledge base
+const botData = [
+  { keywords: ["hi","hello","hey","good morning","good evening"], 
+    response: "Hello 👋! I'm AI Buddy. Ask me about India's best travel spots!" },
+  { keywords: ["how are you"], 
+    response: "I'm doing great 🙌, thanks for asking! How about you?" },
+  { keywords: ["travel tips","traveltips","tips"], 
+    response: "🧳 Travel Tips: Pack light, keep water handy, respect traditions, and book early!" },
+  { keywords: ["south india"], 
+    response: "🌴 South India: Kerala, Hyderabad, Rameshwaram, Kochi, Tirupati." },
+  { keywords: ["north india"], 
+    response: "🏔️ North India: Kashmir, Jaipur, Ladakh, Ooty, Hampi." },
+  { keywords: ["east india"], 
+    response: "🌄 East India: West Bengal, Odisha, Bihar, Jharkhand." },
+  { keywords: ["west india"], 
+    response: "🏖️ West India: Maharashtra, Gujarat, Goa, Rajasthan." },
+  { keywords: ["kashmir"], response: "❄️ Kashmir is paradise on Earth! Famous for Dal Lake & Gulmarg." },
+  { keywords: ["jaipur"], response: "🏰 Jaipur is the Pink City with Hawa Mahal & Amer Fort." },
+  { keywords: ["goa"], response: "🌊 Goa is all about beaches, nightlife, and churches." },
+  { keywords: ["kerala"], response: "🌿 Kerala has backwaters, Ayurveda, and Munnar hills." },
+  { keywords: ["ladakh"], response: "⛰️ Ladakh is adventure heaven – Pangong Lake & Nubra Valley." },
+  { keywords: ["ooty"], response: "🌸 Ooty is the Queen of Hills with tea gardens." },
+  { keywords: ["hampi"], response: "🏛️ Hampi is a UNESCO site with ancient ruins & temples." },
+  { keywords: ["hyderabad"], response: "🍲 Hyderabad = Charminar, biryani, and IT hubs." },
+  { keywords: ["rameshwaram"], response: "🌊 Rameshwaram has temples & the iconic Pamban Bridge." },
+  { keywords: ["kochi"], response: "⚓ Kochi has spice trade, Chinese nets & backwaters." },
+  { keywords: ["tirupati"], response: "🙏 Tirupati hosts Lord Venkateswara Temple." }
+];
+
+// Add message
+function addMessage(sender, text) {
+  const msg = document.createElement("div");
+  msg.classList.add("msg", sender === "user" ? "user-msg" : "bot-msg");
+  msg.textContent = text;
+  document.getElementById("chat-messages").appendChild(msg);
+  document.getElementById("chat-messages").scrollTop = document.getElementById("chat-messages").scrollHeight;
+}
+
+// Handle input
+document.getElementById("chat-input").addEventListener("keypress", function(e) {
+  if (e.key === "Enter") {
+    const userMsg = this.value.trim().toLowerCase();
+    if (!userMsg) return;
+    addMessage("user", this.value);
+    this.value = "";
+
+    let reply = "🤔 Hmm, I didn’t understand. Try asking about North, South, East, or West India!";
+    let bestMatch = null, bestDistance = Infinity;
+
+    for (let item of botData) {
+      for (let kw of item.keywords) {
+        const distance = levenshtein(userMsg, kw);
+        if (userMsg.includes(kw) || distance <= 2) {
+          if (distance < bestDistance) {
+            bestDistance = distance;
+            bestMatch = item.response;
+          }
+        }
+      }
+    }
+    if (bestMatch) reply = bestMatch;
+    setTimeout(() => addMessage("bot", reply), 400);
+  }
+});
+
+// Toggle chat
+const chatBtn = document.getElementById("chat-toggle");
+const chatbot = document.getElementById("chatbot");
+
+chatBtn.addEventListener("click", () => {
+  chatbot.style.display = chatbot.style.display === "none" ? "flex" : "none";
+  if (chatbot.style.display === "flex" && !chatbot.dataset.greeted) {
+    setTimeout(() => addMessage("bot", "👋 Hi! I'm AI Buddy. Ask me about Indian travel spots 🌏"), 400);
+    chatbot.dataset.greeted = true;
+  }
+});
+</script>
+
+</body>
+</html>

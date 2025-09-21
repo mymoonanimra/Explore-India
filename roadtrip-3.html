@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guwahati to Tawang Road Trip | Explore India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Federo&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="header"></div>
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+  </script>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Guwahati to Tawang – Himalayan Adventure</h1>
+      <p>Mountains | Rivers | Monasteries | Best Time: April – October</p>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="section">
+    <h2>About the Road Trip</h2>
+    <p>
+      The Guwahati to Tawang road trip is a journey through the heart of Arunachal Pradesh,  
+      covering approximately 480 km of winding Himalayan roads, rivers, and lush valleys.  
+      Travelers experience breathtaking landscapes, high-altitude passes like Sela Pass,  
+      and cultural heritage sites like Tawang Monastery – the largest in India.
+    </p>
+  </section>
+
+  <!-- Best Time -->
+  <section class="section pastel">
+    <h2>Best Time to Travel</h2>
+    <ul>
+      <li><strong>April – October:</strong> Roads are open, weather is pleasant, and flowers bloom in the valleys.</li>
+      <li><strong>November – March:</strong> Heavy snowfall blocks high-altitude passes; not recommended.</li>
+    </ul>
+    <p class="tip">💡 Tip: May-June is ideal for green landscapes and clear skies, while September-October gives colorful autumn scenery.</p>
+  </section>
+
+  <!-- How to Reach -->
+  <section class="section">
+    <h2>How to Reach Start Point</h2>
+    <p><strong>By Air:</strong> Lokpriya Gopinath Bordoloi Airport, Guwahati. Tawang has a helipad but no commercial flights.</p>
+    <p><strong>By Train:</strong> Guwahati Railway Station is the nearest major railway hub.</p>
+    <p><strong>By Road:</strong> NH13 connects Guwahati to Tawang via Tezpur, Bomdila, and Sela Pass.</p>
+  </section>
+
+  <!-- Key Stops & Attractions -->
+  <section class="section pastel">
+    <h2>Key Stops & Attractions</h2>
+    <p><strong>Tezpur:</strong> Historic town with Agnigarh Hill and Brahmaputra views.</p>
+    <p><strong>Bomdila:</strong> Scenic town with Buddhist monasteries and viewpoints.</p>
+    <p><strong>Sela Pass:</strong> High-altitude snow-capped pass at 4,170 m.</p>
+    <p><strong>Dirang Valley:</strong> Picturesque valley famous for orange orchards and hot springs.</p>
+    <p><strong>Tawang Monastery:</strong> Largest monastery in India, cultural and spiritual hub.</p>
+    <p><strong>Madhuri Lake (Sangestar Lake):</strong> Crystal-clear lake surrounded by mountains.</p>
+    <p><strong>Bap Teng Kang Waterfall:</strong> Stunning waterfall en route to Tawang.</p>
+  </section>
+
+  <!-- Suggested Itinerary -->
+  <section class="section">
+    <h2>Suggested 5-Day Itinerary</h2>
+    <p><strong>Day 1:</strong> Guwahati – Tezpur (Explore Agnigarh and local sights).</p>
+    <p><strong>Day 2:</strong> Tezpur – Bomdila (Enjoy scenic drives and monasteries).</p>
+    <p><strong>Day 3:</strong> Bomdila – Tawang (Cross Sela Pass and visit Dirang Valley).</p>
+    <p><strong>Day 4:</strong> Tawang sightseeing – Tawang Monastery, Madhuri Lake, local markets.</p>
+    <p><strong>Day 5:</strong> Tawang – Guwahati (Return or onward journey, optional overnight stay en route).</p>
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="section pastel">
+    <h2>Travel Tips</h2>
+    <p>✔ Acclimatize for high-altitude passes to avoid sickness.</p>
+    <p>✔ Carry warm clothes, gloves, and waterproof jackets.</p>
+    <p>✔ Fuel up at major towns as petrol stations are scarce in remote areas.</p>
+    <p>✔ Carry cash; ATMs are limited on the way.</p>
+    <p>✔ Road conditions can be tricky; prefer sturdy vehicles for mountain roads.</p>
+    <p>✔ Obtain Inner Line Permit (ILP) online or at Bhalukpong before entering Arunachal Pradesh.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Gallery – Guwahati to Tawang Highlights</h2>
+    <div class="grid">
+      <img src="roadtrip-3 slides/3.jpg" alt="Sela Pass Snow">
+      <img src="roadtrip-3 slides/2.jpg" alt="Tawang Monastery">
+      <img src="roadtrip-3 slides/1.jpg" alt="Dirang Valley">
+      <img src="roadtrip-3 slides/4.jpg" alt="Madhuri Lake">
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <h2>Route Map</h2>
+    <p>Main stops: Guwahati → Tezpur → Bomdila → Dirang → Sela Pass → Tawang</p>
+    <img src="roadtrip-3 slides/map.jpg" alt="Guwahati to Tawang Map" class="map">
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Explore India | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Federo', sans-serif; }
+body { background:#fafafa; color:#34495e; line-height:1.6; }
+
+/* Hero */
+.hero {
+  background: url("roadtrip-3 slides/3.jpg") center/cover no-repeat;
+  height: 400px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-text {
+  background: rgba(0,0,0,0.5);
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: #fff;
+}
+.hero h1 { font-size:2.5rem; margin-bottom:10px; }
+.hero p { font-size:1.2rem; }
+
+/* Sections */
+.section {
+  padding:60px 20px;
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+.section h2 { font-size:2rem; margin-bottom:20px; color:#2c3e50; }
+.section ul { list-style:none; padding:0; }
+.section li, .section p { margin-bottom:10px; text-align:center; }
+.section.pastel {
+  border-radius:15px;
+  margin:40px auto;
+  padding:40px 20px;
+  background: linear-gradient(135deg, #eef9f7, #fff0e6);
+}
+
+/* Tips */
+.tip { font-style:italic; margin-top:15px; color:#444; }
+
+/* Gallery */
+.gallery { padding:40px 20px; text-align:center; }
+.gallery h2 { font-size:2rem; margin-bottom:20px; }
+.gallery .grid { display:flex; justify-content:center; gap:25px; flex-wrap:wrap; }
+.gallery .grid img { width:260px; height:260px; object-fit:cover; border-radius:12px; transition: transform 0.3s; }
+.gallery .grid img:hover { transform:scale(1.05); }
+
+/* Map */
+.map { margin-top:20px; max-width:100%; border-radius:15px; height:350px; object-fit:cover; }
+
+/* Footer */
+footer { background:#e6f5f0; text-align:center; padding:20px; font-size:0.9rem; color:#2c3e50; margin-top:40px; }
+</style>

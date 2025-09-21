@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kolkata | Explore India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Federo&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="header"></div>
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+  </script>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Kolkata – The City of Joy</h1>
+      <p>Culture | Heritage | Festivals | Best Time: October – February</p>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="section">
+    <h2>About Kolkata</h2>
+    <p>
+      Kolkata, the capital of West Bengal, is famous for its <strong>colonial architecture, cultural heritage, and vibrant festivals</strong>. 
+      Known as the “City of Joy,” it is a hub for literature, art, music, and delicious Bengali cuisine.
+    </p>
+  </section>
+
+  <!-- Best Time -->
+  <section class="section pastel">
+    <h2>Best Time to Visit</h2>
+    <ul>
+      <li><strong>October – February:</strong> Pleasant weather, ideal for sightseeing and festivals.</li>
+      <li><strong>March – May:</strong> Hot and humid, not ideal for outdoor activities.</li>
+      <li><strong>June – September:</strong> Monsoon season, moderate rainfall, lush greenery.</li>
+    </ul>
+    <p class="tip">💡 Tip: Visit during Durga Puja (October) for an unforgettable cultural experience.</p>
+  </section>
+
+  <!-- How to Reach -->
+  <section class="section">
+    <h2>How to Reach</h2>
+    <p><strong>By Air:</strong> Netaji Subhas Chandra Bose International Airport connects to major cities in India and abroad.</p>
+    <p><strong>By Train:</strong> Howrah & Sealdah Stations connect Kolkata to all major cities in India.</p>
+    <p><strong>By Road:</strong> Well-connected highways and buses from neighboring states.</p>
+  </section>
+
+  <!-- Top Places -->
+  <section class="section pastel">
+    <h2>Top Places to Visit</h2>
+    <p><strong>Victoria Memorial:</strong> Iconic marble monument surrounded by beautiful gardens.</p>
+    <p><strong>Howrah Bridge:</strong> Engineering marvel and iconic symbol of Kolkata.</p>
+    <p><strong>Indian Museum:</strong> India’s largest museum with art, archaeology, and anthropology exhibits.</p>
+    <p><strong>Dakshineswar Kali Temple:</strong> Famous riverside temple and spiritual center.</p>
+    <p><strong>Park Street:</strong> Bustling area with restaurants, nightlife, and colonial-era architecture.</p>
+  </section>
+
+  <!-- Suggested 3-Day Itinerary -->
+  <section class="section">
+    <h2>Suggested 3-Day Itinerary</h2>
+    <p><strong>Day 1:</strong> Victoria Memorial, St. Paul’s Cathedral, Indian Museum, evening at Park Street.</p>
+    <p><strong>Day 2:</strong> Howrah Bridge, Dakshineswar Kali Temple, Belur Math, boat ride on Hooghly River.</p>
+    <p><strong>Day 3:</strong> Marble Palace, Kumartuli (artisan neighborhood), shopping at New Market, departure.</p>
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="section pastel">
+    <h2>Travel Tips</h2>
+    <p>✔ Wear comfortable shoes – many attractions require walking.</p>
+    <p>✔ Try local street food like puchkas, kathi rolls, and sweets.</p>
+    <p>✔ Use metro and yellow taxis for convenient travel within the city.</p>
+    <p>✔ Stay hydrated and carry light clothing in summer.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Gallery – Kolkata Highlights</h2>
+    <div class="grid">
+      <img src="kolkata slides/victoria.jpg" alt="Victoria Memorial">
+      <img src="kolkata slides/howrah.jpg" alt="Howrah Bridge">
+      <img src="kolkata slides/parkstreet.jpg" alt="Park Street">
+      <img src="kolkata slides/dakshineswar.jpg" alt="Dakshineswar Kali Temple">
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <h2>Map of Kolkata</h2>
+    <p>Shows major landmarks like Victoria Memorial, Howrah Bridge, Dakshineswar, Belur Math, and Park Street.</p>
+    <img src="kolkata slides/map.jpeg" alt="Map of Kolkata" class="map">
+  </section>
+
+  <!-- Food & Culture -->
+  <section class="section pastel">
+    <h2>Local Food & Culture</h2>
+    <p><strong>Food:</strong> Rosogolla, Sandesh, Puchka, Kathi Rolls, Bengali Thali.</p>
+    <p><strong>Festivals:</strong> Durga Puja, Kali Puja, Diwali, Poila Boishakh.</p>
+    <p><strong>Art & Handicrafts:</strong> Terracotta, Dokra, traditional Bengali crafts.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Explore India | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Federo', sans-serif; }
+body { background:#fafafa; color:#34526f; line-height:1.6; }
+
+/* Hero */
+.hero {
+  background: url("kolkata slides/kolkata1.jpg") center/cover no-repeat;
+  height: 400px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-text {
+  background: rgba(0,0,0,0.5);
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: #fff;
+}
+.hero h1 { font-size:2.5rem; margin-bottom:10px; }
+.hero p { font-size:1.2rem; }
+
+/* Sections */
+.section {
+  padding:60px 20px;
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+.section h2 { font-size:2rem; margin-bottom:20px; color:#2c3e50; }
+.section ul { list-style:none; padding:0; }
+.section li, .section p { margin-bottom:10px; text-align:center; }
+.section.pastel {
+  border-radius:15px;
+  margin:40px auto;
+  padding:40px 20px;
+  background: linear-gradient(135deg, #f5e6cc, #e3f2f1);
+}
+
+/* Tips */
+.tip { font-style:italic; margin-top:15px; color:#444; }
+
+/* Gallery */
+.gallery { padding:40px 20px; text-align:center; }
+.gallery h2 { font-size:2rem; margin-bottom:20px; }
+.gallery .grid { display:flex; justify-content:center; gap:25px; flex-wrap:wrap; }
+.gallery .grid img { width:260px; height:260px; object-fit:cover; border-radius:12px; transition: transform 0.3s; }
+.gallery .grid img:hover { transform:scale(1.05); }
+
+/* Map */
+.map { margin-top:20px; max-width:100%; border-radius:15px; height:350px; object-fit:cover; }
+
+/* Footer */
+footer { background:#cfe3dc; text-align:center; padding:20px; font-size:0.9rem; color:#2c3e50; margin-top:40px; }
+</style>

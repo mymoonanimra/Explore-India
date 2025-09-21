@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shimla | Explore India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Federo&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="header"></div>
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+  </script>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Shimla – The Queen of Hills</h1>
+      <p>Colonial Charm | Snowy Peaks | Mall Road | Best Time: March – June, December – February</p>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="section">
+    <h2>About Shimla</h2>
+    <p>
+      Nestled in the Himalayas, Shimla is known as the <strong>“Queen of Hills”</strong>. Once the summer capital of British India, 
+      it is famous for its colonial architecture, scenic landscapes, toy train rides, and bustling Mall Road.  
+      In winter, Shimla turns into a snowy wonderland, perfect for skiing and ice skating.
+    </p>
+  </section>
+
+  <!-- Best Time -->
+  <section class="section pastel">
+    <h2>Best Time to Visit</h2>
+    <ul>
+      <li><strong>March – June:</strong> Pleasant weather, ideal for sightseeing and outdoor activities.</li>
+      <li><strong>July – September:</strong> Monsoon season with heavy rainfall, lush greenery but risky for travel.</li>
+      <li><strong>December – February:</strong> Snowfall, best for winter sports and honeymoon trips.</li>
+    </ul>
+    <p class="tip">💡 Tip: Take the toy train from Kalka to Shimla for breathtaking mountain views.</p>
+  </section>
+
+  <!-- How to Reach -->
+  <section class="section">
+    <h2>How to Reach</h2>
+    <p><strong>By Air:</strong> Jubbarhatti Airport (22 km from Shimla), limited flights via Chandigarh & Delhi.</p>
+    <p><strong>By Train:</strong> Kalka-Shimla toy train is a UNESCO World Heritage site.</p>
+    <p><strong>By Road:</strong> Well-connected by buses and taxis from Delhi, Chandigarh, and Manali.</p>
+  </section>
+
+  <!-- Top Places -->
+  <section class="section pastel">
+    <h2>Top Places to Visit</h2>
+    <p><strong>Mall Road:</strong> Hub for shopping, cafés, and colonial buildings.</p>
+    <p><strong>The Ridge:</strong> Open square with views of the snow-covered Himalayas.</p>
+    <p><strong>Kufri:</strong> Popular for skiing, horse rides, and adventure activities.</p>
+    <p><strong>Jakhoo Temple:</strong> Famous Hanuman temple atop Jakhoo Hill.</p>
+    <p><strong>Christ Church:</strong> Iconic landmark with stunning neo-Gothic architecture.</p>
+  </section>
+
+  <!-- Suggested 3-Day Itinerary -->
+  <section class="section">
+    <h2>Suggested 3-Day Itinerary</h2>
+    <p><strong>Day 1:</strong> Mall Road, The Ridge, Christ Church, evening stroll with shopping.</p>
+    <p><strong>Day 2:</strong> Kufri excursion, horse riding, Himalayan Nature Park.</p>
+    <p><strong>Day 3:</strong> Jakhoo Temple, Shimla State Museum, toy train ride back.</p>
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="section pastel">
+    <h2>Travel Tips</h2>
+    <p>✔ Carry light woollens in summer and heavy jackets in winter.</p>
+    <p>✔ Walking shoes are a must – Shimla has many steep paths.</p>
+    <p>✔ Book hotels in advance during peak summer and snowfall seasons.</p>
+    <p>✔ Try local Himachali cuisine like Siddu, Chana Madra, and Tudkiya Bhath.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Gallery – Shimla Highlights</h2>
+    <div class="grid">
+      <img src="shimla slides/s1.jpg" alt="Shimla Mall Road">
+      <img src="shimla slides/s2.jpg" alt="The Ridge in Shimla">
+      <img src="shimla slides/s3.jpg" alt="Kufri Snow">
+      <img src="shimla slides/s4.jpg" alt="Shimla Toy Train">
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <h2>Map of Shimla</h2>
+    <p>Highlights include Mall Road, Kufri, Jakhoo Temple, The Ridge, and Christ Church.</p>
+    <img src="shimla slides/smap.jpg" alt="Map of Shimla" class="map">
+  </section>
+
+  <!-- Food & Culture -->
+  <section class="section pastel">
+    <h2>Local Food & Culture</h2>
+    <p><strong>Food:</strong> Siddu, Chana Madra, Babru, Tudkiya Bhath, Himachali Dham.</p>
+    <p><strong>Festivals:</strong> Summer Festival, Ice Skating Carnival, Diwali, Christmas at The Ridge.</p>
+    <p><strong>Handicrafts:</strong> Wooden carvings, Himachali woollens, caps, and shawls.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Explore India | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Federo', sans-serif; }
+body { background:#fafafa; color:#34526f; line-height:1.6; }
+
+/* Hero */
+.hero {
+  background: url("shimla slides/s3.jpg") center/cover no-repeat;
+  height: 400px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-text {
+  background: rgba(0,0,0,0.5);
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: #fff;
+}
+.hero h1 { font-size:2.5rem; margin-bottom:10px; }
+.hero p { font-size:1.2rem; }
+
+/* Sections */
+.section {
+  padding:60px 20px;
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+.section h2 { font-size:2rem; margin-bottom:20px; color:#2c3e50; }
+.section ul { list-style:none; padding:0; }
+.section li, .section p { margin-bottom:10px; text-align:center; }
+.section.pastel {
+  border-radius:15px;
+  margin:40px auto;
+  padding:40px 20px;
+  background: linear-gradient(135deg, #f3f7e8, #e6f2ff);
+}
+
+/* Tips */
+.tip { font-style:italic; margin-top:15px; color:#444; }
+
+/* Gallery */
+.gallery { padding:40px 20px; text-align:center; }
+.gallery h2 { font-size:2rem; margin-bottom:20px; }
+.gallery .grid { display:flex; justify-content:center; gap:25px; flex-wrap:wrap; }
+.gallery .grid img { width:260px; height:260px; object-fit:cover; border-radius:12px; transition: transform 0.3s; }
+.gallery .grid img:hover { transform:scale(1.05); }
+
+/* Map */
+.map { margin-top:20px; max-width:100%; border-radius:15px; height:350px; object-fit:cover; }
+
+/* Footer */
+footer { background:#e6f0f7; text-align:center; padding:20px; font-size:0.9rem; color:#2c3e50; margin-top:40px; }
+</style>
