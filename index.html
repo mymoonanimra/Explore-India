@@ -686,6 +686,130 @@
 .bot-msg { align-self: flex-start; background: #ffcfd2; }
 #chat-input { border: none; padding: 12px; border-top: 1px solid #eee; outline: none; }
 
+/*  for mobile*/
+
+/* 🌍 Global responsive styles */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* ✅ Mobile screens (up to 600px) */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 28px;
+    border-left: 8px solid #8a501e;
+    padding-left: 10px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    margin-left: 0;   /* remove huge margin */
+    text-align: center;
+  }
+
+  .main-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .links {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .carousel,
+  .center-carousel,
+  .jaipur-carousel,
+  .infinite-carousel {
+    width: 100% !important;
+    height: auto;
+    margin: 20px auto;
+  }
+
+  .slide,
+  .infinite-slide {
+    flex: 0 0 80%;   /* cards take more width on mobile */
+    height: 220px;
+  }
+
+  .jaipur-carousel {
+    height: 250px;
+  }
+
+  .top-places-heading2,
+  .road-trips-h3,
+  .south-india-h4,
+  .north-india-h5,
+  .east-india-h6,
+  .west-india-h7 {
+    padding-left: 20px;
+    font-size: 22px !important;
+  }
+
+  .footer {
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ✅ Tablets (601px – 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 24px;
+    margin-left: 50px;
+  }
+
+  .carousel,
+  .center-carousel,
+  .jaipur-carousel,
+  .infinite-carousel {
+    width: 95%;
+  }
+
+  .slide,
+  .infinite-slide {
+    flex: 0 0 40%;
+    height: 280px;
+  }
+
+  .jaipur-carousel {
+    height: 300px;
+  }
+
+  .top-places-heading2,
+  .road-trips-h3,
+  .south-india-h4,
+  .north-india-h5,
+  .east-india-h6,
+  .west-india-h7 {
+    padding-left: 50px;
+    font-size: 28px;
+  }
+}
+
+/* ✅ Laptops & Desktops (above 1024px) */
+@media (min-width: 1025px) {
+  .carousel,
+  .center-carousel,
+  .jaipur-carousel,
+  .infinite-carousel {
+    width: 1000px;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -1453,6 +1577,57 @@ document.getElementById("chat-toggle").onclick = () => {
   const bot = document.getElementById("chatbot");
   bot.style.display = bot.style.display === "flex" ? "none" : "flex";
 };
+
+/*for mobile*/
+
+// Make any carousel swipeable
+function makeCarouselSwipeable(carouselId) {
+  const track = document.querySelector(`#${carouselId} .carousel-track`);
+  if (!track) return;
+
+  let startX = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  let isDragging = false;
+
+  track.addEventListener("touchstart", startDrag);
+  track.addEventListener("touchmove", moveDrag);
+  track.addEventListener("touchend", endDrag);
+
+  track.addEventListener("mousedown", startDrag);
+  track.addEventListener("mousemove", moveDrag);
+  track.addEventListener("mouseup", endDrag);
+  track.addEventListener("mouseleave", endDrag);
+
+  function startDrag(e) {
+    isDragging = true;
+    startX = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+    track.style.transition = "none"; // stop smooth animation during drag
+  }
+
+  function moveDrag(e) {
+    if (!isDragging) return;
+    const currentX = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+    const deltaX = currentX - startX;
+    currentTranslate = prevTranslate + deltaX;
+    track.style.transform = `translateX(${currentTranslate}px)`;
+  }
+
+  function endDrag() {
+    isDragging = false;
+    prevTranslate = currentTranslate;
+    track.style.transition = "transform 0.3s ease";
+  }
+}
+
+// Apply swipe support to your carousels
+makeCarouselSwipeable("center-carousel");
+makeCarouselSwipeable("carousel");         // 7-slide one
+makeCarouselSwipeable("jaipur-carousel");
+makeCarouselSwipeable("infinite-carousel1");
+makeCarouselSwipeable("infinite-carousel2");
+makeCarouselSwipeable("infinite-carousel3");
+makeCarouselSwipeable("infinite-carousel4");
 
 
  
