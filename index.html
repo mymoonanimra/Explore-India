@@ -687,126 +687,23 @@
 #chat-input { border: none; padding: 12px; border-top: 1px solid #eee; outline: none; }
 
 /*  for mobile*/
-
-/* 🌍 Global responsive styles */
-* {
-  box-sizing: border-box;
-  max-width: 100%;
-}
-
-/* ✅ Mobile screens (up to 600px) */
+/* ✅ Mobile Responsive CSS */
 @media (max-width: 600px) {
-  h1 {
-    font-size: 28px;
-    border-left: 8px solid #8a501e;
-    padding-left: 10px;
-  }
+  body { font-size: 14px; padding: 0 10px; }
 
-  .subtitle {
-    font-size: 20px;
-    margin-left: 0;   /* remove huge margin */
-    text-align: center;
-  }
+  header h1 { font-size: 24px; }
+  .subtitle { font-size: 18px; text-align: center; }
 
-  .main-heading {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
+  nav { flex-wrap: wrap; gap: 6px; }
+  nav a { flex: 1 1 45%; font-size: 14px; }
 
-  .links {
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+  .carousel, .center-carousel, .jaipur-carousel, .infinite-carousel {
+    width: 100%; height: auto;
   }
+  .slide, .infinite-slide { flex: 0 0 85%; height: 200px; }
 
-  .carousel,
-  .center-carousel,
-  .jaipur-carousel,
-  .infinite-carousel {
-    width: 100% !important;
-    height: auto;
-    margin: 20px auto;
-  }
-
-  .slide,
-  .infinite-slide {
-    flex: 0 0 80%;   /* cards take more width on mobile */
-    height: 220px;
-  }
-
-  .jaipur-carousel {
-    height: 250px;
-  }
-
-  .top-places-heading2,
-  .road-trips-h3,
-  .south-india-h4,
-  .north-india-h5,
-  .east-india-h6,
-  .west-india-h7 {
-    padding-left: 20px;
-    font-size: 22px !important;
-  }
-
-  .footer {
-    padding: 30px 20px;
-    text-align: center;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* ✅ Tablets (601px – 1024px) */
-@media (min-width: 601px) and (max-width: 1024px) {
-  h1 {
-    font-size: 36px;
-  }
-
-  .subtitle {
-    font-size: 24px;
-    margin-left: 50px;
-  }
-
-  .carousel,
-  .center-carousel,
-  .jaipur-carousel,
-  .infinite-carousel {
-    width: 95%;
-  }
-
-  .slide,
-  .infinite-slide {
-    flex: 0 0 40%;
-    height: 280px;
-  }
-
-  .jaipur-carousel {
-    height: 300px;
-  }
-
-  .top-places-heading2,
-  .road-trips-h3,
-  .south-india-h4,
-  .north-india-h5,
-  .east-india-h6,
-  .west-india-h7 {
-    padding-left: 50px;
-    font-size: 28px;
-  }
-}
-
-/* ✅ Laptops & Desktops (above 1024px) */
-@media (min-width: 1025px) {
-  .carousel,
-  .center-carousel,
-  .jaipur-carousel,
-  .infinite-carousel {
-    width: 1000px;
-  }
+  .chatbot { width: 90%; max-width: 280px; right: 5%; bottom: 80px; }
+  .footer-container { flex-direction: column; gap: 15px; }
 }
 
 
@@ -1580,54 +1477,41 @@ document.getElementById("chat-toggle").onclick = () => {
 
 /*for mobile*/
 
-// Make any carousel swipeable
+
 function makeCarouselSwipeable(carouselId) {
   const track = document.querySelector(`#${carouselId} .carousel-track`);
   if (!track) return;
 
-  let startX = 0;
-  let currentTranslate = 0;
-  let prevTranslate = 0;
-  let isDragging = false;
+  let startX = 0, currentTranslate = 0, prevTranslate = 0, isDragging = false;
 
-  track.addEventListener("touchstart", startDrag);
-  track.addEventListener("touchmove", moveDrag);
-  track.addEventListener("touchend", endDrag);
-
-  track.addEventListener("mousedown", startDrag);
-  track.addEventListener("mousemove", moveDrag);
-  track.addEventListener("mouseup", endDrag);
-  track.addEventListener("mouseleave", endDrag);
-
-  function startDrag(e) {
+  track.addEventListener("touchstart", e => {
     isDragging = true;
-    startX = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
-    track.style.transition = "none"; // stop smooth animation during drag
-  }
+    startX = e.touches[0].clientX;
+    track.style.transition = "none";
+  });
 
-  function moveDrag(e) {
+  track.addEventListener("touchmove", e => {
     if (!isDragging) return;
-    const currentX = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
-    const deltaX = currentX - startX;
+    const deltaX = e.touches[0].clientX - startX;
     currentTranslate = prevTranslate + deltaX;
     track.style.transform = `translateX(${currentTranslate}px)`;
-  }
+  });
 
-  function endDrag() {
+  track.addEventListener("touchend", () => {
     isDragging = false;
-    prevTranslate = currentTranslate;
+    const slideWidth = track.children[0].getBoundingClientRect().width + 20;
+    const snapIndex = Math.round(Math.abs(currentTranslate) / slideWidth);
+    prevTranslate = -snapIndex * slideWidth;
+    currentTranslate = prevTranslate;
     track.style.transition = "transform 0.3s ease";
-  }
+    track.style.transform = `translateX(${prevTranslate}px)`;
+  });
 }
 
-// Apply swipe support to your carousels
+// ✅ apply swipe to all carousels
 makeCarouselSwipeable("center-carousel");
-makeCarouselSwipeable("carousel");         // 7-slide one
+makeCarouselSwipeable("carousel");
 makeCarouselSwipeable("jaipur-carousel");
-makeCarouselSwipeable("infinite-carousel1");
-makeCarouselSwipeable("infinite-carousel2");
-makeCarouselSwipeable("infinite-carousel3");
-makeCarouselSwipeable("infinite-carousel4");
 
 
  
